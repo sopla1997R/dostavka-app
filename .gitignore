@@ -1,0 +1,10 @@
+# build output for Claude artifacts (rebuilt by tools/build.js)
+out/
+
+# original full-size photos; only the web-sized copies are kept
+clients/*/img/*
+!clients/*/img/web/
+
+# local tooling
+.claude/
+node_modules/
