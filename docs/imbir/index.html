@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F5F4F2">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Суши Имбирь">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <style>:root{padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -1360,7 +1368,8 @@
       }
     ],
     "fallback": "Пока не знаю ответа. Позвоните нам: +7 (924) 863-30-03 или спросите про сеты, доставку, оплату и акции."
-  }
+  },
+  "pwa": true
 }
 </script>
 
@@ -1787,6 +1796,18 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.02em; margin: 0; text-wrap: bal
 .pitch-sheet h2 { font-size: 24px; line-height: 1.15; }
 .pitch-sheet p { margin: 0; color: var(--muted); line-height: 1.55; }
 
+/* Install to home screen */
+.inst { padding: 34px 20px 8px; display: grid; gap: 14px; justify-items: start; }
+.inst .appic { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 6px 18px -8px rgba(0, 0, 0, .35); }
+.inst .appic.mono { font-size: 28px; }
+.inst h2 { font-size: 22px; line-height: 1.2; }
+.inst p { margin: 0; color: var(--muted); line-height: 1.5; font-size: 14.5px; }
+.inst ol { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 12px; width: 100%; }
+.inst li { display: flex; align-items: center; gap: 12px; font-size: 14.5px; line-height: 1.4; }
+.inst li .n { width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--line); display: grid; place-items: center; font-size: 13px; flex: none; }
+.inst li svg { width: 19px; height: 19px; vertical-align: -4px; margin: 0 2px; }
+.inst .hint { font-size: 12.5px; padding: 10px 12px; border-radius: 12px; background: var(--soft); width: 100%; }
+
 /* Splash */
 .splash { position: absolute; inset: 0; z-index: 60; background: var(--bg); display: grid; place-items: center; transition: opacity .45s, visibility .45s; }
 .splash.gone { opacity: 0; visibility: hidden; }
@@ -1878,7 +1899,11 @@ const I = {
   truck: '<path d="M3 7h11v9H3zM14 10h3.5L21 13.5V16h-7"/><circle cx="7" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/>',
   receipt: '<path d="M6 3.5h12v17l-3-2-3 2-3-2-3 2z"/><path d="M9 8.5h6M9 12h6M9 15.5h3"/>',
   pot: '<path d="M4 11h16v2.5a6.5 6.5 0 0 1-6.5 6.5h-3A6.5 6.5 0 0 1 4 13.5z"/><path d="M2.5 11h19M9 7.5c0-1.2 1-1.2 1-2.5M14 7.5c0-1.2 1-1.2 1-2.5"/>',
-  done: '<circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.7L16 9.5"/>'
+  done: '<circle cx="12" cy="12" r="8.5"/><path d="M8 12.3l2.8 2.7L16 9.5"/>',
+  share: '<path d="M12 14.5v-11M8 7.5l4-4 4 4"/><path d="M8 10.5H6v10h12v-10h-2"/>',
+  addsq: '<rect x="4" y="4" width="16" height="16" rx="4"/><path d="M12 8.5v7M8.5 12h7"/>',
+  dots: '<circle cx="12" cy="5.5" r="1.2"/><circle cx="12" cy="12" r="1.2"/><circle cx="12" cy="18.5" r="1.2"/>',
+  phoneapp: '<rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/>'
 };
 const ic = (n, cls = "") => `<svg class="i ${cls}" viewBox="0 0 24 24" aria-hidden="true">${I[n]}</svg>`;
 
@@ -2393,6 +2418,7 @@ function renderMore() {
     <h1 class="ptitle">${esc(C.brand.name)}</h1><p class="psub">${esc(C.brand.tagline)} · ${esc(C.brand.city)}</p>
     <div class="block" style="padding-top:2px;padding-bottom:2px">
       <button class="list-row" id="mChat"><span class="ico">${ic("chat")}</span><span><b>${esc(C.assistant.name)}</b><small>Ответит сразу, днём и ночью</small></span>${ic("chev")}</button>
+      ${C.pwa && !isStandalone() ? `<button class="list-row" id="mInstall"><span class="ico">${ic("phoneapp")}</span><span><b>Установить на телефон</b><small>Иконка на главном экране</small></span>${ic("chev")}</button>` : ""}
       ${S.order ? `<button class="list-row" id="mOrder"><span class="ico">${ic("receipt")}</span><span><b>Заказ №${S.order.num}</b><small class="num">${rub(S.order.total)} · ${stagesFor(S.order)[orderStage(S.order)].title.toLowerCase()}</small></span>${ic("chev")}</button>` : ""}
     </div>
     <div class="h3">Контакты</div>
@@ -2411,7 +2437,57 @@ function renderMore() {
     if (e.target.closest("#mChat")) openChat();
     if (e.target.closest("#mOrder")) openTrack();
     if (e.target.closest("#mPitch")) openPitch();
+    if (e.target.closest("#mInstall")) openInstall(false);
   };
+}
+
+/* ── Install to home screen (PWA) — only on the real site, where config.pwa is set by the build ── */
+let installPrompt = null;
+const isStandalone = () => matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
+const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+const isPhoneWidth = () => matchMedia("(max-width: 899px)").matches;
+if (C.pwa) {
+  if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+  addEventListener("beforeinstallprompt", e => { e.preventDefault(); installPrompt = e; });
+  addEventListener("appinstalled", () => { installPrompt = null; toast("Приложение установлено"); });
+}
+function openInstall(auto) {
+  const icon = C.pwa ? `<img class="appic" src="icons/icon-192.png" alt="">` : monoHTML("appic mono");
+  const head = `${icon}<h2>Установите «${esc(C.brand.name)}» на телефон</h2><p>Иконка на главном экране, меню открывается сразу. Без App Store, места почти не занимает.</p>`;
+  let body, foot;
+  if (installPrompt) {
+    body = "";
+    foot = `<button class="cta" id="instGo">Установить</button>`;
+  } else if (isIOS) {
+    body = `<ol>
+      <li><span class="n">1</span><span>Нажмите ${ic("share")} «Поделиться» внизу экрана</span></li>
+      <li><span class="n">2</span><span>Выберите ${ic("addsq")} «На экран „Домой“»</span></li>
+      <li><span class="n">3</span><span>Нажмите «Добавить» в правом верхнем углу</span></li>
+    </ol><p class="hint">Открыли из WhatsApp или Telegram? Сначала нажмите «Открыть в Safari».</p>`;
+    foot = `<button class="cta" id="instOk">Понятно</button>`;
+  } else {
+    body = `<ol>
+      <li><span class="n">1</span><span>Откройте меню браузера ${ic("dots")}</span></li>
+      <li><span class="n">2</span><span>Выберите «Установить приложение» или «Добавить на главный экран»</span></li>
+    </ol><p class="hint">Открыли из мессенджера? Сначала откройте ссылку в Chrome.</p>`;
+    foot = `<button class="cta" id="instOk">Понятно</button>`;
+  }
+  const remember = () => { if (auto) try { localStorage.setItem("install-later:" + C.brand.id, String(Date.now())); } catch (e) {} };
+  const w = openSheet(`<div class="inst">${head}${body}</div>`, { foot, onClose: remember });
+  w.addEventListener("click", async e => {
+    if (e.target.closest("#instOk")) w.close();
+    if (e.target.closest("#instGo") && installPrompt) {
+      const p = installPrompt; installPrompt = null;
+      try { await p.prompt(); await p.userChoice; } catch (err) {}
+      w.close();
+    }
+  });
+}
+function offerInstall() {
+  if (!C.pwa || isStandalone() || !isPhoneWidth()) return;
+  let last = 0; try { last = +localStorage.getItem("install-later:" + C.brand.id) || 0; } catch (e) {}
+  if (Date.now() - last < 3 * 864e5) return;   // asked in the last 3 days
+  setTimeout(() => { if (!layer.children.length) openInstall(true); }, 3500);
 }
 function openPitch() { openSheet(`<div class="pitch-sheet pitch">${pitchHTML(true)}</div>`); }
 
@@ -2518,6 +2594,7 @@ $("#splashMono").outerHTML = monoHTML("mono");
 $("#splashName").textContent = C.brand.name; $("#splashTag").textContent = C.brand.tagline;
 renderMenu(); renderPromo(); updatePill();
 setTimeout(() => $("#splash").classList.add("gone"), matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 900);
+offerInstall();
 setInterval(() => { if (!S.order) return; creditOrder(); const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip(); }, 2000);
 })();
 </script>
