@@ -74,7 +74,7 @@ const cfg = {
     enabled: true, eyebrow: `Демо для ${quote}`, title: `${quote} в телефоне каждого клиента`,
     lead: "Мы перенесли ваше меню в приложение: ваши блюда, цены и фото. Клиент заказывает за минуту, без звонка и без комиссии агрегаторов.",
     points: ["Заказы сразу приходят вам в Telegram или WhatsApp", "Иконка на телефоне клиента: заказывают у вас, а не в агрегаторе", "Бонусы и промокоды возвращают клиентов за повторными заказами", "Меню, цены и акции меняются за пару минут", "Ставится на телефон без App Store"],
-    try: "Попробуйте сами: соберите корзину и оформите заказ", contactLabel: "Хотите такое же?", contact: "Telegram @your_telegram"
+    try: "Попробуйте сами: соберите корзину и оформите заказ", contactLabel: "Хотите такое же?", contact: "Telegram @samir_gafaroff"
   },
   delivery: { minOrder: 800, freeFrom: 1500, price: 200, time: "45–70 мин", minutes: 60, pickupDiscount: 10, zones: [{ name: shop.city, time: "45–70 мин", price: "200 ₽, от 1 500 ₽ бесплатно" }] },
   contacts: { phone, address: addr, open, close, telegram: shop.tg ? "@" + shop.tg.replace(/^https?:\/\/t\.me\//, "").replace(/^\+/, "") : "" },

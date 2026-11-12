@@ -1,11 +1,15 @@
 // Builds the outreach table: leads/shops.json → leads/Магазины.xlsx (opens in Excel and Google Sheets).
-// Usage: node tools/make-table.js
+// Usage: node tools/make-table.js [--ready]
 // Statuses already typed into an existing xlsx are NOT read back: keep working in one copy of the table.
 const fs = require("fs"), path = require("path"), zlib = require("zlib");
 const root = path.join(__dirname, "..");
 const SITE = "https://sopla1997r.github.io/dostavka-app/";
-const shops = JSON.parse(fs.readFileSync(path.join(root, "leads", "shops.json"), "utf8"));
+const all = JSON.parse(fs.readFileSync(path.join(root, "leads", "shops.json"), "utf8"));
 const built = new Set(fs.existsSync(path.join(root, "docs")) ? fs.readdirSync(path.join(root, "docs")).filter(d => fs.existsSync(path.join(root, "docs", d, "index.html"))) : []);
+
+// --ready: a short table with only the shops whose demo is already built
+const onlyReady = process.argv.includes("--ready");
+const shops = onlyReady ? all.filter(s => built.has(s.slug)) : all;
 
 const STATUSES = ["Не отправляли", "Отправили", "Ответили", "Думают", "Отказ", "Клиент"];
 const COLS = [
@@ -75,6 +79,6 @@ function zip(entries) {
   return Buffer.concat([...parts, cd, end]);
 }
 
-const out = path.join(root, "leads", "Магазины.xlsx");
+const out = path.join(root, "leads", onlyReady ? "Готовые демо.xlsx" : "Магазины.xlsx");
 fs.writeFileSync(out, zip(files));
 console.log(`table: ${out} · ${shops.length} shops · demos ready: ${shops.filter(s => built.has(s.slug)).length}`);
