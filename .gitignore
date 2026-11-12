@@ -8,3 +8,6 @@ clients/*/img/*
 # local tooling
 .claude/
 node_modules/
+
+# outreach list and statuses stay private (the repo is public)
+leads/
