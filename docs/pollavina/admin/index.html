@@ -197,7 +197,7 @@
   }
  ],
  "live": {
-  "topic": "zakaz-app-pollavina-50d818768926"
+  "topic": "zakaz-app-pollavina-f4cf67ffc1ca"
  },
  "appUrl": "../"
 }
@@ -504,7 +504,7 @@ function orderCard(o) {
 }
 
 function emptyNew() {
-  return `<div class="empty"><b>Новых заказов нет</b>Откройте приложение на телефоне и оформите заказ: он появится здесь со звуком.<br><button class="btn line" data-test>Пробный заказ</button></div>`;
+  return `<div class="empty"><b>Новых заказов нет</b>Откройте приложение на телефоне и оформите заказ: он появится здесь со звуком.</div>`;
 }
 function renderOrders() {
   const all = Object.values(S.orders).sort((a, b) => b.created - a.created);
@@ -591,26 +591,6 @@ function setStage(id, st, extra = {}) {
   toast(st < 0 ? "Заказ №" + o.num + " отменён" : "Заказ №" + o.num + ": " + STEP(o)[st].toLowerCase());
 }
 
-/* test order: lets the cafe try the cabinet without a phone */
-const NAMES = ["Анна", "Дмитрий", "Екатерина", "Сергей", "Мария", "Алексей", "Ольга", "Иван"];
-const STREETS = ["ул. Ленина, 12", "ул. Мира, 7", "ул. Советская, 45", "ул. Гагарина, 3", "ул. Садовая, 21", "ул. Молодёжная, 9"];
-function testOrder() {
-  const pick = a => a[Math.floor(Math.random() * a.length)];
-  const pool = C.products.filter(p => !S.stop.has(p.id));
-  const lines = []; const n = 1 + Math.floor(Math.random() * 3);
-  for (let i = 0; i < n; i++) { const p = pick(pool); if (lines.some(l => l.id === p.id)) continue; const qn = 1 + Math.floor(Math.random() * 2); const pr = p.sizes ? p.sizes[0].price : p.price; lines.push({ id: p.id, name: p.name, q: qn, sum: pr * qn, opts: "" }); }
-  const sub = lines.reduce((a, l) => a + l.sum, 0), del = Math.random() < .7;
-  const fee = del && C.delivery && sub < (C.delivery.freeFrom || 0) ? (C.delivery.price || 0) : 0;
-  const d = "9" + String(Math.floor(Math.random() * 1e9)).padStart(9, "0");
-  const ev = { type: "order", id: Math.random().toString(36).slice(2, 10), num: 1000 + Math.floor(Math.random() * 9000), created: Date.now(), mode: del ? "delivery" : "pickup",
-    eta: hhmm(Date.now() + (del ? (C.delivery.minutes || 45) : 20) * 60000), asap: true, lines, sub, fee, discount: 0, promo: "", total: sub + fee,
-    name: pick(NAMES), phone: `+7 (${d.slice(0, 3)}) ${d.slice(3, 6)}-${d.slice(6, 8)}-${d.slice(8)}`, addr: del ? pick(STREETS) : "", flat: del ? String(1 + Math.floor(Math.random() * 120)) : "", ent: del ? "подъезд " + (1 + Math.floor(Math.random() * 4)) : "",
-    pay: del ? pick(["Картой курьеру", "Наличными", "Переводом по СБП"]) : "Картой при получении", note: pick(["", "", "Позвонить за 10 минут", "Без лука, пожалуйста", "Приборы на двоих"]), test: true };
-  send({ ...ev });
-  onEvent(ev, Date.now(), false);
-}
-
-/* ── events ── */
 document.addEventListener("click", e => {
   const t = e.target; let b;
   if ((b = t.closest("[data-tab]"))) { S.tab = b.dataset.tab; $$("#tabs button").forEach(x => x.classList.toggle("on", x === b)); ["orders", "menu", "stats"].forEach(k => { $("#v-" + k).hidden = k !== S.tab; }); render(); scrollTo(0, 0); return; }
@@ -621,7 +601,6 @@ document.addEventListener("click", e => {
   if ((b = t.closest("[data-reason]"))) { setStage(b.dataset.reason, -1, { reason: b.dataset.r }); return; }
   if ((b = t.closest("[data-stop]"))) { const id = b.dataset.stop; if (S.stop.has(id)) S.stop.delete(id); else S.stop.add(id); publishMenu(); toast(P[id].name + (S.stop.has(id) ? ": в стоп-листе" : ": снова в наличии")); return; }
   if (t.closest("[data-clearstop]")) { S.stop.clear(); publishMenu(); return; }
-  if (t.closest("[data-test]")) { testOrder(); return; }
   if (t.closest("#openSw")) { S.open = !S.open; publishMenu(); toast(S.open ? "Приём заказов включён" : "Приём заказов на паузе"); return; }
   if (t.closest("#soundBtn")) { S.sound = !S.sound; save(); render(); if (S.sound) ding(); return; }
 });
