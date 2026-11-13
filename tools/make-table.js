@@ -3,7 +3,7 @@
 // Statuses already typed into an existing xlsx are NOT read back: keep working in one copy of the table.
 const fs = require("fs"), path = require("path"), zlib = require("zlib");
 const root = path.join(__dirname, "..");
-const SITE = "https://sopla1997r.github.io/dostavka-app/";
+const SITE = "https://zakaz-app.github.io/dostavka-app/";
 const all = JSON.parse(fs.readFileSync(path.join(root, "leads", "shops.json"), "utf8"));
 const built = new Set(fs.existsSync(path.join(root, "docs")) ? fs.readdirSync(path.join(root, "docs")).filter(d => fs.existsSync(path.join(root, "docs", d, "index.html"))) : []);
 
