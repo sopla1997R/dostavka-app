@@ -1027,6 +1027,8 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.02em; margin: 0; text-wrap: bal
 .plus svg { width: 18px; height: 18px; stroke-width: 2; }
 .plus:hover { background: var(--ink); color: var(--bg); }
 .plus:active { transform: scale(.9); }
+.card:has(.soldout) .ph img { opacity: .5; filter: grayscale(1); }
+.soldout { font-size: 12px; color: var(--muted); padding: 6px 10px; border-radius: 999px; background: var(--soft); white-space: nowrap; }
 .stepper { display: flex; align-items: center; height: 34px; border-radius: 17px; background: var(--ink); color: var(--bg); font-weight: 600; font-size: 14px; animation: pop .25s var(--ease); }
 .stepper button { width: 32px; height: 34px; display: grid; place-items: center; color: inherit; }
 .stepper button svg { width: 16px; height: 16px; stroke-width: 2; }
@@ -1423,6 +1425,9 @@ const S = {
 };
 Object.keys(S.cart).forEach(k => { if (!P[S.cart[k].id]) delete S.cart[k]; });
 const save = () => store.set(KEY, { cart: S.cart, mode: S.mode, promo: S.promo, bonus: S.bonus, spent: S.spent, order: S.order, seen: S.seen, form: S.form });
+// Cafe cabinet link (only when the config has "live"): stop-list and "taking orders" come from the cabinet.
+const L = { stop: new Set(), open: null };
+const stopped = id => L.stop.has(id);
 
 const imgOf = x => !x ? "" : P[x] ? (P[x].img || "") : x;   // a product id or a path
 const monoHTML = (cls = "mono") => `<div class="${cls}">${C.brand.logoImg ? `<img src="${esc(C.brand.logoImg)}" alt="">` : esc(C.brand.monogram || C.brand.name[0])}</div>`;
@@ -1472,7 +1477,7 @@ function add(id, s = 0, x = [], q = 1) {
 }
 function setQty(k, q) { if (!S.cart[k]) return; if (q <= 0) delete S.cart[k]; else S.cart[k].q = q; save(); cartChanged(false); }
 const simpleKey = id => lineKey(id, P[id].sizes ? 0 : -1, []);
-function quickAdd(id) { const p = P[id]; if (hasOptions(p)) { openProduct(id); return false; } add(id, 0, [], 1); refreshCards(id); return true; }
+function quickAdd(id) { const p = P[id]; if (stopped(id)) { toast("Сейчас нет в наличии"); return false; } if (hasOptions(p)) { openProduct(id); return false; } add(id, 0, [], 1); refreshCards(id); return true; }
 
 /* ── Tab bar ── */
 const TABS = [["menu", "Меню", "home"], ["promo", "Акции", "tag"], ["cart", "Корзина", "bag"], ["bonus", "Бонусы", "gift"], ["more", "Профиль", "user"]];
@@ -1502,12 +1507,18 @@ if (C.pitch && C.pitch.enabled) $("#pitch").innerHTML = pitchHTML(false); else $
 /* ── Menu ── */
 function greeting() { const h = new Date().getHours(); return h < 5 ? "Доброй ночи" : h < 12 ? "Доброе утро" : h < 17 ? "Добрый день" : "Добрый вечер"; }
 function openNow() {
+  if (L.open === false) return false;
   const n = new Date(), m = n.getHours() * 60 + n.getMinutes();
   const t = s => { const [h, mm] = s.split(":").map(Number); return h * 60 + mm; };
   const o = t(C.contacts.open), c = t(C.contacts.close);
   return c > o ? m >= o && m < c : m >= o || m < c;
 }
+function openLine() {
+  const open = openNow();
+  return `<i class="dot${open ? "" : " off"}"></i>${open ? "Открыто до " + esc(C.contacts.close) : L.open === false ? "Сейчас не принимаем заказы" : "Закрыто · откроемся в " + esc(C.contacts.open)}`;
+}
 function cardCtl(p) {
+  if (stopped(p.id)) return `<span class="soldout">Нет в наличии</span>`;
   const q = qtyOf(p.id);
   if (!hasOptions(p) && q > 0) return `<div class="stepper"><button data-dec="${p.id}" aria-label="Убрать">${ic("minus")}</button><span class="num">${q}</span><button data-inc="${p.id}" aria-label="Добавить">${ic("plus")}</button></div>`;
   return `<button class="plus" data-add="${p.id}" aria-label="Добавить ${esc(p.name)}">${ic("plus")}</button>`;
@@ -1537,18 +1548,18 @@ function card(p) {
 const STAGE_ICONS = ["receipt", "pot", "truck", "done"];
 function liveStrip() {
   const o = S.order; if (!o) return "";
-  const st = orderStage(o); if (st >= 3 && Date.now() - o.created > 60000 * 3) return "";
+  const st = orderStage(o); if (st >= 3 && Date.now() - (o.doneAt || o.created) > 60000 * 3) return "";
+  if (o.cancelled) return `<button class="live" id="liveBtn"><span class="lv-ic">${ic("x")}</span><span><b>Заказ №${o.num} · отменён</b><small>Позвоните нам: ${esc(C.contacts.phone)}</small></span>${ic("chev")}</button>`;
   const s = stagesFor(o)[st];
   return `<button class="live" id="liveBtn"><span class="lv-ic">${ic(STAGE_ICONS[st])}</span><span><b>Заказ №${o.num} · ${esc(s.title)}</b><small>${st < 3 ? (o.mode === "pickup" ? "Будет готово к " : "Привезём к ") + o.eta : "Приятного аппетита"}</small></span>${ic("chev")}</button>`;
 }
 function renderMenu() {
-  const open = openNow();
   const v = $("#v-menu");
   v.innerHTML = `
   <div class="pad">
     <div class="top">
       ${monoHTML()}
-      <div><div class="brandname">${esc(C.brand.name)}</div><div class="brandsub"><i class="dot${open ? "" : " off"}"></i>${open ? "Открыто до " + esc(C.contacts.close) : "Закрыто · откроемся в " + esc(C.contacts.open)}</div></div>
+      <div><div class="brandname">${esc(C.brand.name)}</div><div class="brandsub" id="openLine">${openLine()}</div></div>
       <button class="iconbtn ml-auto" id="chatBtn" aria-label="Чат с помощником">${ic("chat")}</button>
     </div>
     ${C.pitch && C.pitch.enabled ? `<button class="demo-ribbon" id="ribbon"><i></i>${esc(C.pitch.eyebrow)}<span>Что это?</span></button>` : ""}
@@ -1713,7 +1724,7 @@ function openProduct(id) {
     if ((b = e.target.closest("[data-s]"))) { s = +b.dataset.s; $$("[data-s]", w).forEach(z => z.classList.toggle("on", z === b)); upd(); }
     else if ((b = e.target.closest("[data-x]"))) { const i = +b.dataset.x; x = x.includes(i) ? x.filter(z => z !== i) : [...x, i]; b.classList.toggle("on"); upd(); }
     else if ((b = e.target.closest("[data-q]"))) { q = Math.max(1, Math.min(20, q + +b.dataset.q)); upd(); }
-    else if (e.target.closest("#padd")) { add(id, s, x, q); refreshCards(id); toast("Добавлено: " + p.name); w.close(); }
+    else if (e.target.closest("#padd")) { if (stopped(id)) { toast("Сейчас нет в наличии"); return; } add(id, s, x, q); refreshCards(id); toast("Добавлено: " + p.name); w.close(); }
   });
 }
 
@@ -1794,6 +1805,9 @@ function fmtPhone(v) {
   return s;
 }
 function openCheckout() {
+  if (L.open === false) { toast("Кафе сейчас не принимает заказы"); return; }
+  const gone = Object.values(S.cart).filter(l => stopped(l.id));
+  if (gone.length) { toast("Закончилось: " + gone.map(l => P[l.id].name).join(", ")); return; }
   const t = totals(), f = S.form, del = S.mode === "delivery";
   const slots = []; const now = new Date(); now.setMinutes(Math.ceil(now.getMinutes() / 30) * 30 + 60, 0, 0);
   for (let i = 0; i < 6; i++) slots.push(new Date(now.getTime() + i * 30 * 60000).toTimeString().slice(0, 5));
@@ -1808,6 +1822,7 @@ function openCheckout() {
     <div class="fl"><label for="coTime">Когда</label><select id="coTime"><option value="">Как можно скорее · ${del ? esc(D.time) : "20 мин"}</option>${slots.map(s => `<option value="${s}">Ко времени · ${s}</option>`).join("")}</select></div>
     <div class="fl"><span class="lbl">Оплата</span><div class="pays">${pays.map((x, i) => `<button type="button" class="extra radio${i === (f.pay || 0) ? " on" : ""}" data-pay="${i}"><span class="bx">${ic("check")}</span>${x}</button>`).join("")}</div></div>
     <div class="fl"><label for="coNote">Комментарий</label><textarea id="coNote" placeholder="Позвонить заранее, приборы на двоих…"></textarea></div>
+    ${C.live ? `<p class="note" style="margin-top:4px">Демо: заказ уйдёт в кабинет кафе. Можно ввести любое имя и адрес.</p>` : ""}
   </form>`;
   const w = openSheet(html, { full: true, foot: `<button class="cta" id="coSend">Подтвердить заказ · <span class="num">${rub(t.total)}</span></button>` });
   let pay = f.pay || 0;
@@ -1831,6 +1846,14 @@ function openCheckout() {
     const eta = slot || new Date(Date.now() + mins * 60000).toTimeString().slice(0, 5);
     const earned = Math.round(tt.total * level().percent / 100);
     S.order = { num: 1000 + Math.floor(Math.random() * 9000), created: Date.now(), total: tt.total, eta, earned, credited: false, mode: S.mode, count: tt.count };
+    if (C.live) {
+      const o = S.order; o.id = Math.random().toString(36).slice(2, 10); o.live = true; o.stage = 0;
+      liveSend({ type: "order", id: o.id, num: o.num, created: o.created, mode: S.mode, eta, asap: !slot,
+        lines: Object.values(S.cart).map(l => { const p = P[l.id], ex = extrasOf(p); return { id: l.id, name: p.name, q: l.q, sum: linePrice(l) * l.q, opts: [p.sizes && p.sizes.length > 1 ? p.sizes[l.s].name : "", ...l.x.map(i => ex[i] ? ex[i].name : "")].filter(Boolean).join(", ") }; }),
+        sub: tt.sub, fee: tt.fee, discount: tt.pickupDisc + tt.promoDisc + tt.bonusSpend, promo: tt.pr && !tt.promoErr ? tt.pr.code : "", total: tt.total,
+        name: S.form.name, phone: S.form.phone, addr: del ? S.form.addr : "", flat: del ? S.form.flat : "", ent: del ? S.form.ent : "",
+        pay: pays[pay], note: $("#coNote", w).value.trim() });
+    }
     S.bonus -= tt.bonusSpend; S.spent += tt.total;
     S.cart = {}; S.promo = null; S.useBonus = false; save();
     w.close();
@@ -1841,10 +1864,19 @@ function openCheckout() {
 
 /* ── Tracking ── */
 const STAGE_MS = 7000; // demo speed
-const orderStage = o => Math.min(3, Math.floor((Date.now() - o.created) / STAGE_MS));
+// Live orders: the cafe moves the status in its cabinet. If nobody answers within 40 s
+// (cabinet not open), the demo falls back to the automatic timer.
+const LIVE_WAIT = 40000;
+const orderStage = o => {
+  if (o.cancelled) return 3;
+  if (o.live && !o.solo) return o.stage || 0;
+  return Math.min(3, Math.floor((Date.now() - (o.solo ? o.soloAt : o.created)) / STAGE_MS));
+};
+const waiting = o => o.live && !o.solo && !o.acked && !o.cancelled;
+const stageTitle = o => o.cancelled ? "Отменён кафе" : stagesFor(o)[orderStage(o)].title;
 const stagesFor = o => o.mode === "pickup"
-  ? [{ title: "Заказ принят", sub: "Кафе получило заказ" }, { title: "Готовим", sub: "Повар уже взялся за дело" }, { title: "Можно забирать", sub: C.contacts.address }, { title: "Выдан", sub: "Приятного аппетита" }]
-  : [{ title: "Заказ принят", sub: "Кафе получило заказ" }, { title: "Готовим", sub: "Повар уже взялся за дело" }, { title: "Курьер в пути", sub: "Едет к вам" }, { title: "Доставлен", sub: "Приятного аппетита" }];
+  ? [{ title: waiting(o) ? "Ждём подтверждения" : "Заказ принят", sub: waiting(o) ? "Кафе получило заказ" : "Кафе приняло заказ" }, { title: "Готовим", sub: "Повар уже взялся за дело" }, { title: "Можно забирать", sub: C.contacts.address }, { title: "Выдан", sub: "Приятного аппетита" }]
+  : [{ title: waiting(o) ? "Ждём подтверждения" : "Заказ принят", sub: waiting(o) ? "Кафе получило заказ" : "Кафе приняло заказ" }, { title: "Готовим", sub: "Повар уже взялся за дело" }, { title: "Курьер в пути", sub: "Едет к вам" }, { title: "Доставлен", sub: "Приятного аппетита" }];
 let trackTimer;
 function openTrack() {
   const o = S.order; if (!o) return;
@@ -1852,6 +1884,15 @@ function openTrack() {
   layer.appendChild(el);
   const stages = stagesFor(o);
   const draw = () => {
+    if (o.cancelled) {
+      el.innerHTML = `<div class="pad" style="display:flex;align-items:center;gap:12px;padding-top:12px"><button class="iconbtn" id="tClose" aria-label="Закрыть">${ic("x")}</button><span style="font-weight:500">Заказ №${o.num}</span></div>
+        <div class="body pad"><div class="orb">${ic("x")}</div><h2>Заказ отменён</h2><p class="eta">Кафе отменило заказ${o.reason ? ": " + esc(o.reason) : ""}</p>
+        <div class="block"><div class="list-row"><span class="ico">${ic("phone")}</span><span><b>Позвоните нам</b><small style="user-select:all">${esc(C.contacts.phone)}</small></span></div></div>
+        <div style="margin-top:14px"><button class="cta" id="tAgain">Вернуться в меню</button></div></div>`;
+      $("#tClose", el).onclick = close; $("#tAgain", el).onclick = () => { close(); setTab("menu"); };
+      return;
+    }
+    const stages = stagesFor(o);
     const st = orderStage(o), s = stages[st];
     el.innerHTML = `<div class="pad" style="display:flex;align-items:center;gap:12px;padding-top:12px"><button class="iconbtn" id="tClose" aria-label="Закрыть">${ic("x")}</button><span style="font-weight:500">Заказ №${o.num}</span></div>
       <div class="body pad">
@@ -1864,20 +1905,20 @@ function openTrack() {
           <div class="sum-row"><span>Начислим бонусов</span><b class="num">+${o.earned}</b></div>
         </div>
         ${st === 3 ? `<div style="margin-top:14px"><button class="cta" id="tAgain">Заказать ещё</button></div>` : `<div class="block" style="margin-top:10px;padding-top:0;padding-bottom:0"><div class="list-row"><span class="ico">${ic("phone")}</span><span><b>Вопрос по заказу?</b><small style="user-select:all">${esc(C.contacts.phone)}</small></span></div></div>`}
-        <p class="note">Демо: статусы меняются быстрее, чем в жизни</p>
+        <p class="note">${o.live && !o.solo ? "Статус меняет кафе в своём кабинете" : "Демо: статусы меняются быстрее, чем в жизни"}</p>
       </div>`;
     if (st === 3) creditOrder();
     $("#tClose", el).onclick = close;
     const again = $("#tAgain", el); if (again) again.onclick = () => { close(); setTab("menu"); };
   };
-  let last = -1;
-  const tick = () => { const st = orderStage(o); if (st !== last) { last = st; draw(); const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip(); } if (st >= 3) clearInterval(trackTimer); };
+  let last = "";
+  const tick = () => { liveFallback(); const st = orderStage(o), key = st + "|" + waiting(o) + "|" + !!o.cancelled + "|" + !!o.solo; if (key !== last) { last = key; draw(); const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip(); } if (st >= 3) clearInterval(trackTimer); };
   function close() { clearInterval(trackTimer); el.classList.remove("open"); setTimeout(() => el.remove(), 450); const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip(); }
   tick(); clearInterval(trackTimer); trackTimer = setInterval(tick, 500);
   requestAnimationFrame(() => requestAnimationFrame(() => el.classList.add("open")));
 }
 function creditOrder() {
-  const o = S.order; if (!o || o.credited || orderStage(o) < 3) return;
+  const o = S.order; if (!o || o.credited || o.cancelled || orderStage(o) < 3) return;
   o.credited = true; S.bonus += o.earned; save(); toast("+" + o.earned + " бонусов за заказ");
   if (S.tab === "bonus") renderBonus();
 }
@@ -1914,7 +1955,7 @@ function renderMore() {
     <div class="block" style="padding-top:2px;padding-bottom:2px">
       <button class="list-row" id="mChat"><span class="ico">${ic("chat")}</span><span><b>${esc(C.assistant.name)}</b><small>Ответит сразу, днём и ночью</small></span>${ic("chev")}</button>
       ${C.pwa && !isStandalone() ? `<button class="list-row" id="mInstall"><span class="ico">${ic("phoneapp")}</span><span><b>Установить на телефон</b><small>Иконка на главном экране</small></span>${ic("chev")}</button>` : ""}
-      ${S.order ? `<button class="list-row" id="mOrder"><span class="ico">${ic("receipt")}</span><span><b>Заказ №${S.order.num}</b><small class="num">${rub(S.order.total)} · ${stagesFor(S.order)[orderStage(S.order)].title.toLowerCase()}</small></span>${ic("chev")}</button>` : ""}
+      ${S.order ? `<button class="list-row" id="mOrder"><span class="ico">${ic("receipt")}</span><span><b>Заказ №${S.order.num}</b><small class="num">${rub(S.order.total)} · ${stageTitle(S.order).toLowerCase()}</small></span>${ic("chev")}</button>` : ""}
     </div>
     <div class="h3">Контакты</div>
     <div class="block" style="padding-top:2px;padding-bottom:2px">
@@ -2080,6 +2121,48 @@ function openChat() {
   $("#compose", w).addEventListener("submit", e => { e.preventDefault(); const i = $("#chatIn", w); ask(i.value); i.value = ""; });
 }
 
+/* ── Live link with the cafe cabinet (demo transport: ntfy.sh topic + BroadcastChannel for the same browser) ── */
+const LV = { seen: new Set(), cabinetAt: 0, bc: null };
+function liveSend(ev) {
+  if (!C.live) return;
+  ev.u = Math.random().toString(36).slice(2, 12); LV.seen.add(ev.u);
+  try { LV.bc && LV.bc.postMessage(ev); } catch (e) {}
+  fetch("https://ntfy.sh/" + C.live.topic, { method: "POST", body: JSON.stringify(ev) }).catch(() => {});
+}
+function liveFallback() {
+  const o = S.order;
+  if (!o || !o.live || o.solo || o.acked || o.cancelled) return;
+  const cabinetOnline = Date.now() - LV.cabinetAt < 6 * 60000;
+  if (!cabinetOnline && Date.now() - o.created > LIVE_WAIT) { o.solo = true; o.soloAt = Date.now() - STAGE_MS; save(); }
+}
+function liveOn(ev, at) {
+  if (!ev || !ev.type || (ev.u && LV.seen.has(ev.u))) return;
+  if (ev.u) LV.seen.add(ev.u);
+  if (ev.type === "hello" || ev.type === "menu") LV.cabinetAt = Math.max(LV.cabinetAt, at || Date.now());
+  if (ev.type === "menu") {
+    L.stop = new Set(ev.stop || []); L.open = ev.open === false ? false : null;
+    refreshCards(); const ol = $("#openLine"); if (ol) ol.innerHTML = openLine();
+  }
+  if (ev.type === "status" && S.order && ev.id === S.order.id) {
+    const o = S.order, before = stageTitle(o);
+    if (ev.stage < 0) { o.cancelled = true; o.reason = ev.reason || ""; }
+    else {
+      if (o.solo && ev.stage < orderStage(o)) return;   // the timer already went further; keep it
+      o.stage = Math.max(o.stage || 0, ev.stage); o.solo = false;
+      if (ev.eta) o.eta = ev.eta;
+    }
+    o.acked = true; if (orderStage(o) >= 3 && !o.doneAt) o.doneAt = Date.now();
+    save();
+    const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip();
+    if (!$(".track") && stageTitle(o) !== before) toast("Заказ №" + o.num + ": " + stageTitle(o).toLowerCase());
+  }
+}
+function liveConnect() {
+  try { LV.bc = new BroadcastChannel("zakaz-" + C.live.topic); LV.bc.onmessage = e => liveOn(e.data, Date.now()); } catch (e) {}
+  const es = new EventSource("https://ntfy.sh/" + C.live.topic + "/sse?since=12h");
+  es.onmessage = e => { try { const d = JSON.parse(e.data); if (d.event === "message") liveOn(JSON.parse(d.message), d.time * 1000); } catch (err) {} };
+}
+
 /* ── Clock in the fake status bar ── */
 const tickClock = () => { const n = new Date(); $("#clock").textContent = n.getHours() + ":" + String(n.getMinutes()).padStart(2, "0"); };
 tickClock(); setInterval(tickClock, 15000);
@@ -2090,7 +2173,8 @@ $("#splashName").textContent = C.brand.name; $("#splashTag").textContent = C.bra
 renderMenu(); renderPromo(); updatePill();
 setTimeout(() => $("#splash").classList.add("gone"), matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 900);
 offerInstall();
-setInterval(() => { if (!S.order) return; creditOrder(); const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip(); }, 2000);
+if (C.live) liveConnect();
+setInterval(() => { if (!S.order) return; liveFallback(); creditOrder(); const lw = $("#liveWrap"); if (lw) lw.innerHTML = liveStrip(); }, 2000);
 })();
 </script>
 

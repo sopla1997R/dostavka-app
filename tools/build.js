@@ -80,7 +80,7 @@ self.addEventListener("install", e => { self.skipWaiting(); e.waitUntil(caches.o
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", e => {
   const req = e.request, url = new URL(req.url);
-  if (req.method !== "GET" || url.origin !== location.origin) return;
+  if (req.method !== "GET" || url.origin !== location.origin || url.pathname.includes("/admin/")) return;   // the cafe cabinet is not cached
   if (req.mode === "navigate") {
     e.respondWith(fetch(req).then(r => { const c = r.clone(); caches.open(V).then(x => x.put("./", c)); return r; }).catch(() => caches.match("./")));
     return;
@@ -99,4 +99,26 @@ try {
   if (!fs.existsSync(path.join(iconsDir, "icon-192.png"))) throw new Error("icons were not generated: " + e.message);
 }
 
-console.log(`built ${name} · ${cfg.products.length} products · ${linked} photos linked · out/${name} + docs/${name}`);
+// Cafe cabinet (demo): docs/<name>/admin/ — only for clients with "live": { "topic": "..." } in their config.
+let cabinet = "";
+if (cfg.live && cfg.live.topic) {
+  const adminTpl = fs.readFileSync(path.join(root, "app", "admin.html"), "utf8");
+  const open = '<script id="app-config" type="application/json">';
+  const a = adminTpl.indexOf(open), b = adminTpl.indexOf("</script>", a);
+  const d = cfg.delivery || {};
+  const ac = {
+    brand: cfg.brand, theme: cfg.theme, fonts: cfg.fonts, contacts: cfg.contacts,
+    delivery: { minutes: d.minutes, price: d.price, freeFrom: d.freeFrom },
+    categories: cfg.categories.map(c => ({ id: c.id, name: c.name })),
+    products: cfg.products.map(p => ({ id: p.id, cat: p.cat, name: p.name, price: p.price, sizes: p.sizes, img: p.img ? "../" + p.img : "" })),
+    live: cfg.live, appUrl: "../"
+  };
+  const json = JSON.stringify(ac, null, 1).replace(/<\//g, "<\\/");
+  const adminDir = path.join(pagesDir, "admin");
+  fs.mkdirSync(adminDir, { recursive: true });
+  fs.writeFileSync(path.join(adminDir, "index.html"),
+    adminTpl.slice(0, a + open.length) + "\n" + json + "\n" + adminTpl.slice(b).replace(/<meta name="theme-color" content="[^"]*">/, `<meta name="theme-color" content="${t.bg || "#F4F3F1"}">`));
+  cabinet = ` + docs/${name}/admin`;
+}
+
+console.log(`built ${name} · ${cfg.products.length} products · ${linked} photos linked · out/${name} + docs/${name}${cabinet}`);
