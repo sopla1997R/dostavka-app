@@ -113,6 +113,7 @@ const rejected = new Set(fs.existsSync(rejectedPath) ? JSON.parse(fs.readFileSyn
     let ok = 0;
     for (const p of cfg.products) {
       if (p.img) continue;
+      if (!FIX && fs.readdirSync(dir).some(f => f.startsWith(p.id + "."))) continue;   // the cafe's own photo (e.g. cut from its menu) wins
       if (FIX && !FIX[slug][p.id]) continue;
       if (FIX) {
         for (const f of fs.readdirSync(dir)) if (f.startsWith(p.id + ".")) fs.unlinkSync(path.join(dir, f));
