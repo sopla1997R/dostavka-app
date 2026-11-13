@@ -540,6 +540,16 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.02em; margin: 0; text-wrap: bal
 .stepper.light { background: var(--soft); color: var(--ink); }
 .stepper.lg { height: 48px; border-radius: 14px; }
 .stepper.lg button { width: 44px; height: 48px; }
+/* dishes without a photo: a full-width row instead of an empty picture */
+.card.noimg { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 14px; padding: 12px 12px 12px 16px; min-height: 58px; }
+.stories:empty { display: none; }
+.card.noimg .body { padding: 0; gap: 4px; }
+.card.noimg .nm { font-size: 15px; }
+.card.noimg .ds { font-size: 12.5px; line-height: 1.4; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.card.noimg .side { display: flex; align-items: center; gap: 12px; flex: none; }
+.card.noimg .tag { margin-left: 6px; vertical-align: 2px; display: inline-block; }
+.grid.rows { grid-template-columns: 1fr; gap: 8px; }
+.p-body.nohero { padding-top: 40px; }
 .empty-search { text-align: center; color: var(--muted); padding: 40px 0; }
 
 /* Floating cart pill + tab bar */
@@ -1011,6 +1021,14 @@ function cardCtl(p) {
 const tagHTML = t => `<span class="tag${/хит/.test(t) ? " hot" : ""}">${esc(t[0].toUpperCase() + t.slice(1))}</span>`;
 function card(p) {
   const q = qtyOf(p.id);
+  if (!p.img) return `<article class="card noimg" data-open="${p.id}">
+    <div class="body">
+      <div class="nm">${esc(p.name)}${p.tags && p.tags.length ? tagHTML(p.tags[0]) : ""}</div>
+      ${p.desc ? `<div class="ds">${esc(p.desc)}</div>` : ""}
+      ${weightOf(p) ? `<div class="wt">${esc(weightOf(p))}</div>` : ""}
+    </div>
+    <div class="side"><span class="pr num">${p.sizes && p.sizes.length > 1 ? "от " : ""}${rub(basePrice(p))}</span><span data-ctl="${p.id}">${cardCtl(p)}</span></div>
+  </article>`;
   return `<article class="card" data-open="${p.id}">
     ${photo(p)}
     ${p.tags && p.tags.length ? `<div class="tags">${p.tags.slice(0, 1).map(tagHTML).join("")}</div>` : ""}
@@ -1051,7 +1069,7 @@ function renderMenu() {
   <div class="dots" id="dots">${C.banners.map((_, i) => `<i class="${i ? "" : "on"}"></i>`).join("")}</div>
   <nav class="chips pad" id="chips">${C.categories.map((c, i) => `<button class="chip${i ? "" : " on"}" data-cat="${c.id}">${esc(c.name)}</button>`).join("")}</nav>
   <div class="pad" id="sections">
-    ${C.categories.map(c => { const items = C.products.filter(p => p.cat === c.id); return items.length ? `<section class="section" id="sec-${c.id}" data-sec="${c.id}"><h2>${esc(c.name)}</h2><div class="grid">${items.map(card).join("")}</div></section>` : ""; }).join("")}
+    ${C.categories.map(c => { const items = C.products.filter(p => p.cat === c.id); return items.length ? `<section class="section" id="sec-${c.id}" data-sec="${c.id}"><h2>${esc(c.name)}</h2><div class="grid${items.every(p => !p.img) ? " rows" : ""}">${items.map(card).join("")}</div></section>` : ""; }).join("")}
     <div class="empty-search" id="noResults" hidden>Ничего не нашли. Попробуйте другое слово.</div>
   </div>`;
   renderAddr();
@@ -1183,8 +1201,8 @@ function openProduct(id) {
   let s = 0, x = [], q = 1;
   const price = () => ((p.sizes ? p.sizes[s].price : p.price) + x.reduce((a, i) => a + ex[i].price, 0)) * q;
   const meta = () => [p.sizes ? p.sizes[s].weight : p.weight].filter(Boolean).join(" · ");
-  const html = `${photo(p, "p-hero")}
-    <div class="p-body">
+  const html = `${p.img ? photo(p, "p-hero") : ""}
+    <div class="p-body${p.img ? "" : " nohero"}">
       <h2>${esc(p.name)}</h2>
       <div class="p-meta" id="pm">${esc(meta())}</div>
       <p>${esc(p.desc)}</p>
@@ -1245,9 +1263,9 @@ function renderCart() {
     <div class="mode ${S.mode === "pickup" ? "pickup" : ""}" style="margin:0 0 12px"><i class="knob"></i><button data-mode="delivery" class="${S.mode === "delivery" ? "on" : ""}">Доставка</button><button data-mode="pickup" class="${S.mode === "pickup" ? "on" : ""}">${pickupLabel()}</button></div>
     ${S.mode === "delivery" ? `<div class="block free"><div class="row"><span>${t.left ? "До бесплатной доставки" : "Доставка бесплатная"}</span><b class="num">${t.left ? rub(t.left) : ""}</b></div><div class="bar"><i style="width:${pct}%"></i></div></div>` : ""}
     <div class="block" style="margin-top:10px;padding-top:4px;padding-bottom:4px">
-      ${lines.map(([k, l]) => { const p = P[l.id]; const ex = extrasOf(p); const opts = [p.sizes && p.sizes.length > 1 ? p.sizes[l.s].name : "", ...l.x.map(i => ex[i] ? ex[i].name : "")].filter(Boolean).join(", "); return `<div class="line">${photo(p)}<div class="info"><b>${esc(p.name)}</b>${opts ? `<small>${esc(opts)}</small>` : `<small>${esc(weightOf(p) || "")}</small>`}<span class="pr num">${rub(linePrice(l) * l.q)}</span></div><div class="stepper light"><button data-k="${esc(k)}" data-d="-1" aria-label="Меньше">${ic("minus")}</button><span class="num">${l.q}</span><button data-k="${esc(k)}" data-d="1" aria-label="Больше">${ic("plus")}</button></div></div>`; }).join("")}
+      ${lines.map(([k, l]) => { const p = P[l.id]; const ex = extrasOf(p); const opts = [p.sizes && p.sizes.length > 1 ? p.sizes[l.s].name : "", ...l.x.map(i => ex[i] ? ex[i].name : "")].filter(Boolean).join(", "); return `<div class="line">${p.img ? photo(p) : ""}<div class="info"><b>${esc(p.name)}</b>${opts ? `<small>${esc(opts)}</small>` : `<small>${esc(weightOf(p) || "")}</small>`}<span class="pr num">${rub(linePrice(l) * l.q)}</span></div><div class="stepper light"><button data-k="${esc(k)}" data-d="-1" aria-label="Меньше">${ic("minus")}</button><span class="num">${l.q}</span><button data-k="${esc(k)}" data-d="1" aria-label="Больше">${ic("plus")}</button></div></div>`; }).join("")}
     </div>
-    ${ups.length ? `<div class="h3">Добавить к заказу</div><div class="hscroll">${ups.map(p => `<div class="mini">${photo(p)}<div class="mb"><b>${esc(p.name)}</b><button class="addbtn num" data-up="${p.id}">+ ${rub(basePrice(p))}</button></div></div>`).join("")}</div>` : ""}
+    ${ups.length ? `<div class="h3">Добавить к заказу</div><div class="hscroll">${ups.map(p => `<div class="mini">${p.img ? photo(p) : ""}<div class="mb"><b>${esc(p.name)}</b><button class="addbtn num" data-up="${p.id}">+ ${rub(basePrice(p))}</button></div></div>`).join("")}</div>` : ""}
     <div class="h3">Промокод</div>
     <div class="field"><input id="promoIn" placeholder="Введите промокод" value="${esc(S.promo || "")}" autocomplete="off"><button class="btn-s" id="promoBtn">${S.promo ? "Убрать" : "Применить"}</button></div>
     ${t.pr && !t.promoErr ? `<div class="ok-note">${esc(t.pr.text)}</div>` : ""}${t.promoErr ? `<div class="err-note">${esc(t.promoErr)}</div>` : ""}
@@ -1555,7 +1573,7 @@ function openChat() {
       chatLog.push({ who: "bot", text: r.a }); push(esc(r.a), "msg bot");
       const ps = findProducts(r.products);
       if (ps.length) {
-        const cards = ps.map(p => `<div class="mini">${photo(p)}<div class="mb"><b>${esc(p.name)}</b><button class="addbtn num" data-cadd="${p.id}">${p.sizes && p.sizes.length > 1 ? "от " : "+ "}${rub(basePrice(p))}</button></div></div>`).join("");
+        const cards = ps.map(p => `<div class="mini">${p.img ? photo(p) : ""}<div class="mb"><b>${esc(p.name)}</b><button class="addbtn num" data-cadd="${p.id}">${p.sizes && p.sizes.length > 1 ? "от " : "+ "}${rub(basePrice(p))}</button></div></div>`).join("");
         chatLog.push({ cards }); push(cards, "msg-cards");
       }
     }, 600 + Math.min(900, r.a.length * 8));

@@ -17,7 +17,7 @@ const photos = fs.existsSync(photoDir) ? fs.readdirSync(photoDir) : [];
 const byId = Object.fromEntries(photos.map(f => [path.parse(f).name, f]));
 let linked = 0;
 for (const p of cfg.products) if (!p.img && byId[p.id]) { p.img = "img/" + byId[p.id]; linked++; }
-const used = [...new Set(cfg.products.map(p => p.img).filter(x => x && x.startsWith("img/")))];
+const used = [...new Set([...cfg.products.map(p => p.img), ...(cfg.banners || []).map(x => x.img), ...(cfg.stories || []).map(x => x.img)].filter(x => typeof x === "string" && x.startsWith("img/")))];
 
 function page(c) {
   const open = '<script id="app-config" type="application/json">';

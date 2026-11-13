@@ -8,9 +8,11 @@ const raw = JSON.parse(fs.readFileSync(path.join(root, "leads", "raw.json"), "ut
 const MAX_BRANCHES = 6;                       // more than that is a chain with its own app
 const CHAINS = /додо|папа джонс|ёбидоёби|якитория|il патио|гудман|суши make|суши восток|sushi days|вкусно — и точка|kfc|бургер кинг|rostic/i;
 const CITY = { lensk: "Ленск", novosibirsk: "Новосибирск" };
-const TYPE_AT = /, (?=(служба|кафе|ресторан|пиццерия|бар|суши|студия|сеть|компания|гастробар|траттория|доставка|паназиат|стрит|кулинар|семейн|итальян|азиат|гриль|пивн|магазин|столовая|кейтеринг|ресто|быстрое|кондитер|пекарн|киоск|бары)[а-яё-]*)/i;
+const TYPE_AT = /, (?=(служба|кафе|ресторан|пиццерия|бар|суши|студия|сеть|компания|гастробар|траттория|доставка|паназиат|стрит|кулинар|семейн|итальян|азиат|гриль|пивн|магазин|столовая|кейтеринг|ресто|быстрое|кондитер|пекарн|киоск|бары|кофе)[а-яё-]*)/i;
 // "sayoris. ru" → "sayoris.ru"; link labels like "Перейти в Telegram-канал" and job-site links are not a site
 const cleanSite = u => { const x = String(u || "").replace(/\s+/g, ""); return /^[\wа-яё-]+(\.[\wа-яё-]+)*\.[a-zа-яё]{2,}(\/|$)/i.test(x) && !/hh\.ru|t\.me|max\.ru/i.test(x) ? x : ""; };
+// checked by hand: these already take orders on their own site, so our demo offers them nothing new
+const HAS_ORDERING = new Set(["kosmo-roll", "picca-lvica-i-sushi-lvushi", "kartel-rolls", "pingvi-sushi", "prosushi", "napoli", "fila", "nicks-food", "bento-sushi", "kruti-katay"]);
 const FIXED_SLUG = { "70000001095491348": "imbir" };  // demos that already exist keep their links
 
 const TR = { а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "e", ж: "zh", з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n", о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f", х: "h", ц: "c", ч: "ch", ш: "sh", щ: "sch", ъ: "", ы: "y", ь: "", э: "e", ю: "yu", я: "ya" };
@@ -42,13 +44,14 @@ for (const [id, f] of entries) {
 
   const type = rest.join(", ") || (f.rubrics || [])[0] || "";
   // A: a delivery service or a small pizza/sushi/shawarma place; B: restaurants and bars, where delivery is a side business
-  const priority = f.city === "lensk" || /достав|суши|ролл|пицц|шаурм|пирог|быстр|стрит/i.test(type + " " + name) ? "A" : "B";
+  const hasOrdering = HAS_ORDERING.has(slug);
+  const priority = hasOrdering ? "C" : f.city === "lensk" || /достав|суши|ролл|пицц|шаурм|пирог|быстр|стрит/i.test(type + " " + name) ? "A" : "B";
   shops.push({
     id, slug, city: CITY[f.city] || f.city, name, type: type ? type[0].toUpperCase() + type.slice(1) : "",
     rating: f.rating ?? "", reviews: f.reviews ?? "", branches: f.branches || 1,
     phones: f.phones, wa: f.wa[0] || "", tg: f.tg[0] || "", vk: f.vk[0] || "", site, email: f.email[0] || "",
     addr: [f.addr, f.note].filter(Boolean).join(", "), hours: f.hours,
-    note: [site ? "" : "нет сайта", f.goods ? "меню есть в 2ГИС" : ""].filter(Boolean).join("; "),
+    note: hasOrdering ? "уже есть свой онлайн-заказ на сайте" : [site ? "" : "нет сайта", f.goods ? "меню есть в 2ГИС" : ""].filter(Boolean).join("; "),
     gis: `https://2gis.ru/${f.city}/firm/${id}`, priority
   });
 }
