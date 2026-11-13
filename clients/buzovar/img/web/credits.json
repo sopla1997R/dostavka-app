@@ -1,0 +1,200 @@
+{
+ "c1p1": {
+  "dish": "Баншатай Шулэн 500гр",
+  "query": "bansh dumpling soup",
+  "title": "Mutton soup with bansh.JPG",
+  "creator": "Brücke-Osteuropa",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Mutton_soup_with_bansh.JPG",
+  "id": "c7633709"
+ },
+ "c1p2": {
+  "dish": "Бухлеор 500 гр.",
+  "query": "mongolian soup",
+  "title": "Guriltai shul.jpg",
+  "creator": "Mizu_Basyo",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Guriltai_shul.jpg",
+  "id": "c14154284"
+ },
+ "c1p3": {
+  "id": "c108061496",
+  "dish": "Шулэн 380 гр",
+  "query": "soup with dumplings",
+  "title": "Truffle Soup Dumplings at Din Tai Fung.jpg",
+  "creator": "Okadiputera",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Truffle_Soup_Dumplings_at_Din_Tai_Fung.jpg"
+ },
+ "c1p4": {
+  "id": "c118656312",
+  "dish": "Лагман Уйгурский 500 гр",
+  "query": "uyghur lagman",
+  "title": "Uyghur Lagman.jpg",
+  "creator": "Mizu basyo at Japanese Wikipedia",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Uyghur_Lagman.jpg"
+ },
+ "c2p1": {
+  "dish": "Витаминный",
+  "query": "vegetable salad",
+  "title": "2023 Sałatka jarzynowa (1).jpg",
+  "creator": "Jacek Halicki",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2023_Sa%C5%82atka_jarzynowa_(1).jpg",
+  "id": "c135532009"
+ },
+ "c2p2": {
+  "id": "c3294513",
+  "dish": "Оливье",
+  "query": "russian salad",
+  "title": "Russian Olivier salad.jpg",
+  "creator": "AlMare",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Russian_Olivier_salad.jpg"
+ },
+ "c2p3": {
+  "dish": "Свекольный",
+  "query": "beetroot salad",
+  "title": "Beetroot Salad (3862315693).jpg",
+  "creator": "Suzette - www.suzette.nu from Arnhem, Netherlands",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Beetroot_Salad_(3862315693).jpg",
+  "id": "c35713826"
+ },
+ "c2p4": {
+  "dish": "Морковь по корейски",
+  "query": "korean carrot salad",
+  "title": "Korean-style carrot.jpg",
+  "creator": "Off-shell",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Korean-style_carrot.jpg",
+  "id": "c41503052"
+ },
+ "c2p5": {
+  "id": "c202543508",
+  "dish": "Летний",
+  "query": "tomato cucumber salad",
+  "title": "Tomato and cucumber salad - Boston, MA.jpg",
+  "creator": "Daderot",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tomato_and_cucumber_salad_-_Boston,_MA.jpg"
+ },
+ "c2p6": {
+  "id": "c163334474",
+  "dish": "Бузовар",
+  "query": "salad with meat and vegetables",
+  "title": "Roasted meat skewers with vegetable gravy.jpg",
+  "creator": "Jameswasswa",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Roasted_meat_skewers_with_vegetable_gravy.jpg"
+ },
+ "c2p7": {
+  "dish": "Винегрет",
+  "query": "vinegret",
+  "title": "Vinegret cleaned.jpg",
+  "creator": "Loyna (original image) ; processed by Off-shell",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Vinegret_cleaned.jpg",
+  "id": "c50651487"
+ },
+ "c3p1": {
+  "dish": "Буузы 1 шт",
+  "query": "buuz",
+  "title": "MongolianBuuz.JPG",
+  "creator": "Vidor",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:MongolianBuuz.JPG",
+  "id": "c2578801"
+ },
+ "c3p2": {
+  "dish": "Цуйван 400гр",
+  "query": "tsuivan",
+  "title": "Mongolian Cuisine 22.JPG",
+  "creator": "Brücke-Osteuropa",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Mongolian_Cuisine_22.JPG",
+  "id": "c7633494"
+ },
+ "c3p3": {
+  "dish": "Курица в сливочном соусе 400 гр",
+  "query": "chicken cream sauce",
+  "title": "Pasta chicken with cream sauce (2382791628).jpg",
+  "creator": "Glen Edelson from ATLANTA, USA",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pasta_chicken_with_cream_sauce_(2382791628).jpg",
+  "id": "c43897713"
+ },
+ "c3p4": {
+  "dish": "Гуляш с гарниром",
+  "query": "goulash",
+  "title": "Hungarian goulash soup.jpg",
+  "creator": "Hu Totya",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hungarian_goulash_soup.jpg",
+  "id": "c4978617"
+ },
+ "c3p5": {
+  "id": "c163748762",
+  "dish": "Фрикадельки с гарниром",
+  "query": "meatballs mashed potatoes",
+  "title": "Biltema Cafe Meatballs and mashed potatoes.jpg",
+  "creator": "Ypsilon from Finland",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Biltema_Cafe_Meatballs_and_mashed_potatoes.jpg"
+ },
+ "c3p6": {
+  "id": "c75433721",
+  "dish": "Свинина по тайски",
+  "query": "stir fried pork vegetables",
+  "title": "Stir-fried ginger pork (8486598866).jpg",
+  "creator": "Ruth Hartnup from Vancouver, Canada",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stir-fried_ginger_pork_(8486598866).jpg"
+ },
+ "c3p7": {
+  "id": "c77827437",
+  "dish": "Солнечные деревья",
+  "query": "stir fried meat vegetables",
+  "title": "Chinese stir-fried vegetables with minced meat (5993310313).jpg",
+  "creator": "pelican from Tokyo, Japan",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chinese_stir-fried_vegetables_with_minced_meat_(5993310313).jpg"
+ },
+ "c4p1": {
+  "dish": "Морс (Облепиха) 0,5мл",
+  "query": "mors drink",
+  "title": "Mors (ru. Морс - прохладительный негазированный напиток).JPG",
+  "creator": "Schekinov Alexey Victorovich",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mors_(ru._%D0%9C%D0%BE%D1%80%D1%81_-_%D0%BF%D1%80%D0%BE%D1%85%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B5%D0%B3%D0%B0%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0%D0%BF%D0%B8%D1%82%D0%BE%D0%BA).JPG",
+  "id": "c16240840"
+ },
+ "c4p2": {
+  "id": "c48142986",
+  "dish": "Компот (Сухофрукты) 0,5 мл",
+  "query": "dried fruit compote",
+  "title": "Apricot, plum and raisin hoşaf.jpg",
+  "creator": "E4024",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Apricot,_plum_and_raisin_ho%C5%9Faf.jpg"
+ },
+ "c4p3": {
+  "dish": "Чай Монгольский",
+  "query": "suutei tsai",
+  "title": "Tsai.JPG",
+  "creator": "user:takoradee",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tsai.JPG",
+  "id": "c3531432"
+ },
+ "c4p4": {
+  "dish": "Чай Черный",
+  "query": "cup of tea",
+  "title": "Cup of black tea.JPG",
+  "creator": "AntanO",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cup_of_black_tea.JPG",
+  "id": "c40266689"
+ }
+}

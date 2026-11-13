@@ -1,0 +1,254 @@
+{
+ "c1p1": {
+  "dish": "Фо Га",
+  "query": "pho ga chicken",
+  "title": "Vietnamese Pho.jpg",
+  "creator": "Nowforever",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vietnamese_Pho.jpg",
+  "id": "c76066247"
+ },
+ "c1p2": {
+  "dish": "Фо Бо",
+  "query": "pho bo",
+  "title": "Beef noodle soup (Phở bò) - Pho Hanoi Authentic 2024-12-01.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Beef_noodle_soup_(Ph%E1%BB%9F_b%C3%B2)_-_Pho_Hanoi_Authentic_2024-12-01.jpg",
+  "id": "c156680631"
+ },
+ "c1p3": {
+  "dish": "Том ям по - Вьетнамски с курицей",
+  "query": "tom yum soup",
+  "title": "Tom Yum Soup with Mushroom - Easythaiger 2026-04-21.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tom_Yum_Soup_with_Mushroom_-_Easythaiger_2026-04-21.jpg",
+  "id": "c190331661"
+ },
+ "c1p4": {
+  "dish": "Том ям по - Вьетнамски с морепродуктами",
+  "query": "tom yum soup",
+  "title": "Tom Yum Soup with mushroom - Siam Siam 2025-09-07.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tom_Yum_Soup_with_mushroom_-_Siam_Siam_2025-09-07.jpg",
+  "id": "c174632733"
+ },
+ "c2p1": {
+  "dish": "Жаренный рис с курицей",
+  "query": "fried rice",
+  "title": "Fried rice with shrimp paste.jpg",
+  "creator": "Geoffreyrabbit",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fried_rice_with_shrimp_paste.jpg",
+  "id": "c81076771"
+ },
+ "c2p2": {
+  "id": "c154170228",
+  "dish": "Жаренный рис с говядиной",
+  "query": "beef fried rice",
+  "title": "Cumin beef fried rice (1).jpg",
+  "creator": "Fumikas Sagisavas",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cumin_beef_fried_rice_(1).jpg"
+ },
+ "c2p3": {
+  "dish": "Жаренный рис с морепродуктами",
+  "query": "fried rice",
+  "title": "Koh Mak, Thailand, Fried rice with seafood, Thai fried rice.jpg",
+  "creator": "Vyacheslav Argenberg",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Koh_Mak,_Thailand,_Fried_rice_with_seafood,_Thai_fried_rice.jpg",
+  "id": "c110878384"
+ },
+ "c2p4": {
+  "dish": "Жаренная лапша с курицей",
+  "query": "fried noodles",
+  "title": "Fried noodles, chicken and vegetables, Adelaide.jpg",
+  "creator": "philip.mallis",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fried_noodles,_chicken_and_vegetables,_Adelaide.jpg",
+  "id": "c117053944"
+ },
+ "c2p5": {
+  "dish": "Жареная лапша с говядиной",
+  "query": "fried noodles",
+  "title": "Fried noodles with scallops.jpg",
+  "creator": "P1898",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fried_noodles_with_scallops.jpg",
+  "id": "c185485166"
+ },
+ "c2p6": {
+  "dish": "Жаренная лапша с морепродуктами",
+  "query": "fried noodles",
+  "title": "Fried Instant Noodles 2.jpg",
+  "creator": "NHC",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fried_Instant_Noodles_2.jpg",
+  "id": "c74209865"
+ },
+ "c3p1": {
+  "dish": "Бо Сао",
+  "query": "stir fried beef",
+  "title": "Stir-fried beef, Fire Town, Montparnasse, Paris 002.jpg",
+  "creator": "Guilhem Vellut from Paris, France",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stir-fried_beef,_Fire_Town,_Montparnasse,_Paris_002.jpg",
+  "id": "c56163705"
+ },
+ "c3p2": {
+  "dish": "Том Сао",
+  "query": "stir fried shrimp",
+  "title": "Stir-fried shrimp with garlic and vinegar - panoramio.jpg",
+  "creator": "Jiaqian AirplaneFan",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Stir-fried_shrimp_with_garlic_and_vinegar_-_panoramio.jpg",
+  "id": "c60559007"
+ },
+ "c3p3": {
+  "dish": "Курочка от Паспарту",
+  "query": "roast chicken",
+  "title": "Roasted chicken leg piece-MB20.jpg",
+  "creator": "Rajeeb Dutta",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Roasted_chicken_leg_piece-MB20.jpg",
+  "id": "c94928511"
+ },
+ "c3p4": {
+  "id": "c149579552",
+  "dish": "Ребра по - Сайгонски",
+  "query": "grilled pork ribs",
+  "title": "Freshippo honey-grilled pork ribs.jpg",
+  "creator": "Fumikas Sagisavas",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Freshippo_honey-grilled_pork_ribs.jpg"
+ },
+ "c4p1": {
+  "id": "c89352625",
+  "dish": "Нем /1шт.",
+  "query": "fried spring rolls",
+  "title": "Deep Fried Spring Roll.jpg",
+  "creator": "Hiroooooo",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Deep_Fried_Spring_Roll.jpg"
+ },
+ "c4p2": {
+  "dish": "Спринг-ролл с креветками /1шт.",
+  "query": "fried spring rolls",
+  "title": "Kim's Mum's Spring Rolls - baked, not fried (544018597).jpg",
+  "creator": "Alpha from Melbourne, Australia",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kim%27s_Mum%27s_Spring_Rolls_-_baked,_not_fried_(544018597).jpg",
+  "id": "c159069067"
+ },
+ "c4p3": {
+  "dish": "Королевские креветки темпура 1/шт.",
+  "query": "shrimp tempura",
+  "title": "Tempura shrimp and vegetables - Massachusetts.jpg",
+  "creator": "Daderot",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tempura_shrimp_and_vegetables_-_Massachusetts.jpg",
+  "id": "c202977066"
+ },
+ "c5p1": {
+  "dish": "Любимый салат Рембо",
+  "query": "vietnamese salad",
+  "title": "Gỏi đu đủ khô bò.jpg",
+  "creator": "stu_spivack",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:G%E1%BB%8Fi_%C4%91u_%C4%91%E1%BB%A7_kh%C3%B4_b%C3%B2.jpg",
+  "id": "c4278244"
+ },
+ "c5p2": {
+  "dish": "Салат дядюшки Хо",
+  "query": "vietnamese salad",
+  "title": "Palm Beach Salad 5234.jpg",
+  "creator": "Henry Kellner",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Palm_Beach_Salad_5234.jpg",
+  "id": "c57820036"
+ },
+ "c6p1": {
+  "dish": "Комбо Сайгон",
+  "query": "beef rice bowl",
+  "title": "Gyuu-don 001.jpg",
+  "creator": "Ocdp",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gyuu-don_001.jpg",
+  "id": "c25909530"
+ },
+ "c6p2": {
+  "dish": "Комбо Нячанг",
+  "query": "beef rice bowl",
+  "title": "Japanese Style Beef Big Rice Bowl in Hong Kong.jpg",
+  "creator": "Ceeseven",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Japanese_Style_Beef_Big_Rice_Bowl_in_Hong_Kong.jpg",
+  "id": "c81557394"
+ },
+ "c6p3": {
+  "dish": "Комбо Дананг",
+  "query": "beef rice bowl",
+  "title": "Rice Bowl Beef Belly Don.jpg",
+  "creator": "Mrifqis713",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Rice_Bowl_Beef_Belly_Don.jpg",
+  "id": "c156743779"
+ },
+ "c7p1": {
+  "dish": "Рис",
+  "query": "steamed rice bowl",
+  "title": "Steamed rice in bowl 01.jpg",
+  "creator": "Anna Frodesiak",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Steamed_rice_in_bowl_01.jpg",
+  "id": "c15599710"
+ },
+ "c7p2": {
+  "dish": "Картофель фри",
+  "query": "french fries",
+  "title": "DoughnDolce Beef Sandwich.jpg",
+  "creator": "Vincent60030",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:DoughnDolce_Beef_Sandwich.jpg",
+  "id": "c94980206"
+ },
+ "c7p3": {
+  "dish": "Рис с овощами",
+  "query": "steamed rice bowl",
+  "title": "A bowl of rice.jpg",
+  "creator": "Douglas Perkins",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_bowl_of_rice.jpg",
+  "id": "c43976882"
+ },
+ "c8p1": {
+  "dish": "Вьетнамский кофейный фин",
+  "query": "vietnamese coffee phin",
+  "title": "Vietnamese Coffee in Da Lat.jpg",
+  "creator": "Frank Fox",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vietnamese_Coffee_in_Da_Lat.jpg",
+  "id": "c45637463"
+ },
+ "c8p2": {
+  "dish": "Горячий чай 500 мл.",
+  "query": "cup of tea",
+  "title": "Cup of tea at the Gorreana tea factory.jpg",
+  "creator": "Kritzolina",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cup_of_tea_at_the_Gorreana_tea_factory.jpg",
+  "id": "c157833603"
+ },
+ "c8p3": {
+  "dish": "Фирменный холодный чай",
+  "query": "iced tea",
+  "title": "Iced tea with ice cubes.jpg",
+  "creator": "Editor at Large",
+  "license": "CC BY-SA 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Iced_tea_with_ice_cubes.jpg",
+  "id": "c1752757"
+ }
+}

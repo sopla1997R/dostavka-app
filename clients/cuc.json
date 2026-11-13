@@ -74,7 +74,7 @@
    "title": "Ми Сао Бо",
    "text": "Попробуйте: 320 ₽",
    "bg": "#E6ECF2",
-   "img": "img/hero1.jpg",
+   "img": "c2p1",
    "action": {
     "type": "product",
     "id": "c2p1"
@@ -84,14 +84,55 @@
    "title": "−10% на первый заказ",
    "text": "По промокоду APP10 в приложении",
    "bg": "#F2EEDD",
-   "img": "img/hero1.jpg",
+   "img": "c3p1",
    "action": {
     "type": "promo",
     "code": "APP10"
    }
   }
  ],
- "stories": [],
+ "stories": [
+  {
+   "title": "Супы",
+   "img": "c1p1",
+   "text": "Супы: 4 позиции в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c1"
+   }
+  },
+  {
+   "title": "Жаренная",
+   "img": "c2p1",
+   "text": "Жаренная лапша: 5 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c2"
+   }
+  },
+  {
+   "title": "Жренный",
+   "img": "c3p1",
+   "text": "Жренный рис: 2 позиции в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c3"
+   }
+  },
+  {
+   "title": "Закуски",
+   "img": "c4p1",
+   "text": "Закуски: 5 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c4"
+   }
+  }
+ ],
  "categories": [
   {
    "id": "c1",

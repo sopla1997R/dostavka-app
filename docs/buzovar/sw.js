@@ -1,4 +1,4 @@
-const V = "buzovar-mwemtbk3";
+const V = "buzovar-mweph0ug";
 self.addEventListener("install", e => { self.skipWaiting(); e.waitUntil(caches.open(V).then(c => c.addAll(["./", "manifest.webmanifest", "icons/icon-192.png"]))); });
 self.addEventListener("activate", e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== V).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener("fetch", e => {

@@ -13,6 +13,10 @@ http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split("?")[0]);
   if (url === "/") return send(res, 200, TYPES[".html"], wrap(fs.readFileSync(path.join(root, "app", "index.html"), "utf8")));
 
+  if (/^\/(out\/review\.html|clients\/[a-z0-9-]+\/img\/[\w.-]+)$/.test(url)) {   // local photo review only
+    const f = path.join(root, url);
+    if (fs.existsSync(f)) return send(res, 200, TYPES[path.extname(f)] || "application/octet-stream", fs.readFileSync(f));
+  }
   if (url.startsWith("/docs/")) {
     let f = path.normalize(path.join(root, url));
     if (!f.startsWith(path.join(root, "docs"))) return send(res, 403, "text/plain", "forbidden");

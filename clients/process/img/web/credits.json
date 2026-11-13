@@ -1,0 +1,344 @@
+{
+ "c1p1": {
+  "dish": "Цезарь с курицей",
+  "query": "caesar salad",
+  "title": "Caesar Salad - Purezza 2023-11-22.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Caesar_Salad_-_Purezza_2023-11-22.jpg",
+  "id": "c141247692"
+ },
+ "c1p2": {
+  "dish": "Цезарь с креветкой",
+  "query": "caesar salad shrimp",
+  "title": "Caesar salad with shrimp - San Francisco.jpg",
+  "creator": "Daderot",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Caesar_salad_with_shrimp_-_San_Francisco.jpg",
+  "id": "c153580699"
+ },
+ "c1p3": {
+  "dish": "Салат с ростбифом и теплым картофелем",
+  "query": "roast beef salad",
+  "title": "Leftover Roast Beef Rib-Eye salad with Pomegranate Vinaigrette.jpg",
+  "creator": "Alpha from Melbourne, Australia",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Leftover_Roast_Beef_Rib-Eye_salad_with_Pomegranate_Vinaigrette.jpg",
+  "id": "c2438480"
+ },
+ "c1p4": {
+  "dish": "Салат с хрустящим баклажаном",
+  "query": "eggplant salad",
+  "title": "Grilled Eggplant Salad.jpg",
+  "creator": "nabila64",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Grilled_Eggplant_Salad.jpg",
+  "id": "c134036108"
+ },
+ "c2p1": {
+  "dish": "Чиабатта с курицей",
+  "query": "ciabatta sandwich",
+  "title": "CIABATTA - Vios 2025-08-08.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:CIABATTA_-_Vios_2025-08-08.jpg",
+  "id": "c172046299"
+ },
+ "c2p2": {
+  "dish": "Чиабатта с рваной говядиной",
+  "query": "ciabatta sandwich",
+  "title": "Breakfast Ciabatta - Amo 2026-03-10.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Breakfast_Ciabatta_-_Amo_2026-03-10.jpg",
+  "id": "c185906888"
+ },
+ "c3p1": {
+  "dish": "Куриная грудка гриль",
+  "query": "grilled chicken breast",
+  "title": "Grilled chicken breast, Santo Domingo, La Palma.jpg",
+  "creator": "Gerda Arendt",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Grilled_chicken_breast,_Santo_Domingo,_La_Palma.jpg",
+  "id": "c145083096"
+ },
+ "c3p2": {
+  "id": "c35215376",
+  "dish": "Бифштекс с яйцом",
+  "query": "steak and eggs",
+  "title": "Steak and Eggs Benedict.jpg",
+  "creator": "Will Merydith from USA",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Steak_and_Eggs_Benedict.jpg"
+ },
+ "c3p3": {
+  "dish": "Креветки гриль",
+  "query": "grilled shrimp",
+  "title": "Grilled Shrimp Skewers.jpg",
+  "creator": "Eximiousincorp",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Grilled_Shrimp_Skewers.jpg",
+  "id": "c126781534"
+ },
+ "c3p4": {
+  "dish": "Брискет",
+  "query": "beef brisket",
+  "title": "Smoked Brisket with smoke ring.jpg",
+  "creator": "Johnsparks75",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Smoked_Brisket_with_smoke_ring.jpg",
+  "id": "c124519204"
+ },
+ "c3p5": {
+  "id": "c186331929",
+  "dish": "Мраморные колбаски",
+  "query": "grilled sausages plate",
+  "title": "Grilled sausages at home.jpg",
+  "creator": "JIP",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Grilled_sausages_at_home.jpg"
+ },
+ "c3p6": {
+  "dish": "Ребрышки «BBQ",
+  "query": "pork ribs",
+  "title": "Pork ribs (1).jpg",
+  "creator": "Fumikas Sagisavas",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pork_ribs_(1).jpg",
+  "id": "c151705367"
+ },
+ "c3p7": {
+  "id": "c82590280",
+  "dish": "Говяжий язык",
+  "query": "sliced beef tongue",
+  "title": "Beef tongue with sliced with wine soup pasta.jpg",
+  "creator": "Geoffreyrabbit",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Beef_tongue_with_sliced_with_wine_soup_pasta.jpg"
+ },
+ "c3p8": {
+  "dish": "Люля с жареными овощами",
+  "query": "lula kebab",
+  "title": "Lula kebab.jpg",
+  "creator": "Lesya Dolyk",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Lula_kebab.jpg",
+  "id": "c40113690"
+ },
+ "c4p1": {
+  "id": "c8446430",
+  "dish": "Гречка с грибами",
+  "query": "buckwheat porridge",
+  "title": "Гречневая каша.jpg",
+  "creator": "Laitr Keiows",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%93%D1%80%D0%B5%D1%87%D0%BD%D0%B5%D0%B2%D0%B0%D1%8F_%D0%BA%D0%B0%D1%88%D0%B0.jpg"
+ },
+ "c4p2": {
+  "id": "c124812067",
+  "dish": "Рис с жареным яйцом",
+  "query": "egg fried rice",
+  "title": "A bilao of salted egg, seafood, porkchop and fried rice.jpg",
+  "creator": "Irvin Parco Sto. Tomas",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_bilao_of_salted_egg,_seafood,_porkchop_and_fried_rice.jpg"
+ },
+ "c4p3": {
+  "dish": "Картофель фри",
+  "query": "french fries",
+  "title": "Plate of chips at the Chalet Cafe, Cowfold, West Sussex, England.jpg",
+  "creator": "Acabashi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Plate_of_chips_at_the_Chalet_Cafe,_Cowfold,_West_Sussex,_England.jpg",
+  "id": "c60766897"
+ },
+ "c4p4": {
+  "dish": "Картофель фри с трюфелем",
+  "query": "truffle fries",
+  "title": "Truffle oil french fries (33024792848).jpg",
+  "creator": "Tony Webster from Minneapolis, Minnesota, United States",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Truffle_oil_french_fries_(33024792848).jpg",
+  "id": "c77734689"
+ },
+ "c4p5": {
+  "dish": "Картофельные дольки",
+  "query": "potato wedges",
+  "title": "Potato wedges (164510).jpg",
+  "creator": "Moheen Reeyad",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Potato_wedges_(164510).jpg",
+  "id": "c144205313"
+ },
+ "c4p6": {
+  "dish": "Батат печеный с сырным соусом чеддер",
+  "query": "baked sweet potato",
+  "title": "Baked potato, baked sweet potato, and steamed kale.jpg",
+  "creator": "User:O'Dea",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baked_potato,_baked_sweet_potato,_and_steamed_kale.jpg",
+  "id": "c16179882"
+ },
+ "c5p1": {
+  "id": "c78706817",
+  "dish": "Фирменный \"Процесс",
+  "query": "bacon cheeseburger",
+  "title": "Burger King A1 Ultimate Bacon Cheeseburger (19566324005).jpg",
+  "creator": "Willis Lam",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Burger_King_A1_Ultimate_Bacon_Cheeseburger_(19566324005).jpg"
+ },
+ "c5p2": {
+  "dish": "Классический",
+  "query": "hamburger",
+  "title": "Big Mac hamburger.jpg",
+  "creator": "Evan-Amos",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Big_Mac_hamburger.jpg",
+  "id": "c17179743"
+ },
+ "c5p3": {
+  "dish": "Бургер с яйцом",
+  "query": "burger egg",
+  "title": "Egg burger.jpg",
+  "creator": "Medhi jyoti",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Egg_burger.jpg",
+  "id": "c138568512"
+ },
+ "c5p4": {
+  "dish": "Ягодный",
+  "query": "cheeseburger",
+  "title": "Cheeseburger with onions at Hatfield Heath Festival 2017.jpg",
+  "creator": "Acabashi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cheeseburger_with_onions_at_Hatfield_Heath_Festival_2017.jpg",
+  "id": "c60464008"
+ },
+ "c5p5": {
+  "dish": "Сырный",
+  "query": "cheeseburger",
+  "title": "Cheeseburger.jpg",
+  "creator": "Renee Comet (photographer)",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Cheeseburger.jpg",
+  "id": "c1635314"
+ },
+ "c5p6": {
+  "dish": "Мексиканский",
+  "query": "jalapeno burger",
+  "title": "Jalapeno Burger (3521350776).jpg",
+  "creator": "Daniel R. Blume from Toledo, Ohio, USA",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jalapeno_Burger_(3521350776).jpg",
+  "id": "c151034045"
+ },
+ "c5p7": {
+  "dish": "Рваный",
+  "query": "pulled beef burger",
+  "title": "2018-04-26 Pulled beef burger.jpg",
+  "creator": "Maksym Kozlenko",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:2018-04-26_Pulled_beef_burger.jpg",
+  "id": "c68569348"
+ },
+ "c5p8": {
+  "dish": "Куриный с ананасом",
+  "query": "chicken burger",
+  "title": "Chicken-burger-combo (1).jpg",
+  "creator": "Chikex",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chicken-burger-combo_(1).jpg",
+  "id": "c128797775"
+ },
+ "c5p9": {
+  "id": "c84665907",
+  "dish": "Вегетарианский",
+  "query": "veggie burger",
+  "title": "The ultimate veggie burger.jpg",
+  "creator": "Sarah Afshar",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:The_ultimate_veggie_burger.jpg"
+ },
+ "c5p10": {
+  "id": "c18926157",
+  "dish": "Биг смэш бургер",
+  "query": "double cheeseburger",
+  "title": "McDonald's McDouble burger.jpg",
+  "creator": "Evan-Amos",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:McDonald%27s_McDouble_burger.jpg"
+ },
+ "c6p1": {
+  "dish": "Ростбиф",
+  "query": "roast beef",
+  "title": "A roast beef dinner at The Queen's Head, Boreham, Essex, England - lighter.jpg",
+  "creator": "Acabashi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_roast_beef_dinner_at_The_Queen%27s_Head,_Boreham,_Essex,_England_-_lighter.jpg",
+  "id": "c59918748"
+ },
+ "c6p2": {
+  "dish": "Чиз фри с рваной говядиной",
+  "query": "cheese fries",
+  "title": "Cheese Fries.jpg",
+  "creator": "David Goehring",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cheese_Fries.jpg",
+  "id": "c4499914"
+ },
+ "c6p3": {
+  "dish": "Чиз фри с беконом",
+  "query": "cheese fries",
+  "title": "Chili cheese fries mexico.jpg",
+  "creator": "Ambed888",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Chili_cheese_fries_mexico.jpg",
+  "id": "c83574816"
+ },
+ "c6p4": {
+  "dish": "Куриные крылышки",
+  "query": "chicken wings",
+  "title": "Buffalo Burgers Buffalo Chicken Wings (36082467922).jpg",
+  "creator": "Willis Lam",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Buffalo_Burgers_Buffalo_Chicken_Wings_(36082467922).jpg",
+  "id": "c78707615"
+ },
+ "c6p5": {
+  "dish": "Сырные палочки",
+  "query": "mozzarella sticks",
+  "title": "Mozzarella Sticks at Mobtown Ballroom.jpg",
+  "creator": "Sdkb",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mozzarella_Sticks_at_Mobtown_Ballroom.jpg",
+  "id": "c156087843"
+ },
+ "c7p1": {
+  "dish": "Медовик в стакане",
+  "query": "medovik honey cake",
+  "title": "Honey cake Medovik.jpg",
+  "creator": "insatiablemunch @ Flickr ; cropped by Off-shell",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Honey_cake_Medovik.jpg",
+  "id": "c44292256"
+ },
+ "c7p2": {
+  "dish": "Десерт \"Павлова",
+  "query": "pavlova dessert",
+  "title": "Pavlova dessert.JPG",
+  "creator": "Hazel Fowler",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Pavlova_dessert.JPG",
+  "id": "c4057307"
+ },
+ "c7p3": {
+  "dish": "Корпусный десерт \"кофейное зерно",
+  "query": "chocolate mousse",
+  "title": "White chocolate mousse.jpg",
+  "creator": "Kent Wang",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:White_chocolate_mousse.jpg",
+  "id": "c161911441"
+ }
+}

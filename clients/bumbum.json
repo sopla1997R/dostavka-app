@@ -74,7 +74,7 @@
    "title": "Ми сао бо",
    "text": "Попробуйте: 420 ₽",
    "bg": "#F2EEDD",
-   "img": "img/hero1.jpg",
+   "img": "c2p1",
    "action": {
     "type": "product",
     "id": "c2p1"
@@ -84,14 +84,65 @@
    "title": "−10% на первый заказ",
    "text": "По промокоду APP10 в приложении",
    "bg": "#F1E9E2",
-   "img": "img/hero1.jpg",
+   "img": "c3p1",
    "action": {
     "type": "promo",
     "code": "APP10"
    }
   }
  ],
- "stories": [],
+ "stories": [
+  {
+   "title": "Супы",
+   "img": "c1p1",
+   "text": "Супы: 12 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c1"
+   }
+  },
+  {
+   "title": "Лапша",
+   "img": "c2p1",
+   "text": "Лапша: 6 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c2"
+   }
+  },
+  {
+   "title": "Рис",
+   "img": "c3p1",
+   "text": "Рис: 11 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c3"
+   }
+  },
+  {
+   "title": "Горячее",
+   "img": "c4p1",
+   "text": "Горячее: 2 позиции в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c4"
+   }
+  },
+  {
+   "title": "Закуски",
+   "img": "c5p1",
+   "text": "Закуски: 9 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c5"
+   }
+  }
+ ],
  "categories": [
   {
    "id": "c1",

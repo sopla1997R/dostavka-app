@@ -74,7 +74,7 @@
    "title": "Четыре сыра",
    "text": "Попробуйте: 900 ₽",
    "bg": "#E6ECF2",
-   "img": "img/hero1.jpg",
+   "img": "c1p1",
    "action": {
     "type": "product",
     "id": "c1p1"
@@ -84,14 +84,25 @@
    "title": "−10% на первый заказ",
    "text": "По промокоду APP10 в приложении",
    "bg": "#F2EEDD",
-   "img": "img/hero1.jpg",
+   "img": "c1p1",
    "action": {
     "type": "promo",
     "code": "APP10"
    }
   }
  ],
- "stories": [],
+ "stories": [
+  {
+   "title": "Еда",
+   "img": "c1p1",
+   "text": "Еда: 20 позиций в меню.",
+   "button": "Смотреть",
+   "action": {
+    "type": "cat",
+    "id": "c1"
+   }
+  }
+ ],
  "categories": [
   {
    "id": "c1",
