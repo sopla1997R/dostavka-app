@@ -12,7 +12,7 @@ const shop = JSON.parse(fs.readFileSync(path.join(root, "leads", "shops.json"), 
 if (!shop) throw new Error("no such shop in leads/shops.json: " + slug);
 const scraped = JSON.parse(fs.readFileSync(path.join(root, "leads", "scraped", slug + ".json"), "utf8"));
 
-const MAX_CATS = 8, MAX_PER_CAT = 8;
+const MAX_CATS = 8, MAX_PER_CAT = 16;
 const SKIP_CAT = /акци|сертификат|палочк|для тебя|все для суши|всё для суши|заморозк|рекомендуем.+|новинки дня/i;
 const EXTRA_CAT = /добавк|дополнит|соус|приправ|напитк|морс/i;      // small "add to order" categories go last
 const ACCENTS = ["#D9467A", "#E0522D", "#2F7D5B", "#3D63C9", "#B8862B", "#8A4FC7", "#C7453B", "#1F8A8A"];

@@ -1,0 +1,578 @@
+{
+ "c1p1": {
+  "id": "c44307100",
+  "dish": "Пельмени домашние",
+  "query": "pelmeni",
+  "title": "Pelmeni Russian.jpg",
+  "creator": "Eugene Kim @ Flickr",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pelmeni_Russian.jpg"
+ },
+ "c1p2": {
+  "id": "c45451110",
+  "dish": "Николаевские фирменные",
+  "query": "pelmeni sour cream",
+  "title": "Pelmeni in Russia.jpg",
+  "creator": "Jorge Cancela @ Flickr",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pelmeni_in_Russia.jpg"
+ },
+ "c1p3": {
+  "id": "c118386633",
+  "dish": "Пельмени жареные",
+  "query": "fried pelmeni",
+  "title": "Пельмени жареные.jpg",
+  "creator": "Pannet",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B5%D0%BB%D1%8C%D0%BC%D0%B5%D0%BD%D0%B8_%D0%B6%D0%B0%D1%80%D0%B5%D0%BD%D1%8B%D0%B5.jpg"
+ },
+ "c1p4": {
+  "id": "c10284109",
+  "dish": "Николаевские запечённые с сыром и помидором",
+  "query": "baked dumplings cheese",
+  "title": "Baked Gnocchi with Taleggio Cheese and Crispy Sage at Il Fornaio in Kilda.jpg",
+  "creator": "Alpha",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baked_Gnocchi_with_Taleggio_Cheese_and_Crispy_Sage_at_Il_Fornaio_in_Kilda.jpg"
+ },
+ "c1p5": {
+  "id": "c195894817",
+  "dish": "Сибирские со сметаной",
+  "query": "siberian pelmeni",
+  "title": "Siberian Pelmeni.png",
+  "creator": "Funknendai",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Siberian_Pelmeni.png"
+ },
+ "c1p6": {
+  "id": "c189035215",
+  "dish": "Детские цветные",
+  "query": "colorful dumplings",
+  "title": "DFC 4109 Colorful steamed dim sum skewers - green and yellow siu mai and more fresh from the bamboo steamer.jpg",
+  "creator": "PattayaPatrol",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:DFC_4109_Colorful_steamed_dim_sum_skewers_-_green_and_yellow_siu_mai_and_more_fresh_from_the_bamboo_steamer.jpg"
+ },
+ "c1p7": {
+  "id": "c10247334",
+  "dish": "Куриные",
+  "query": "chicken dumplings",
+  "title": "ChickenDumplings.jpg",
+  "creator": "Jonathunder",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:ChickenDumplings.jpg"
+ },
+ "c1p8": {
+  "id": "c105098388",
+  "dish": "С фермерской уткой",
+  "query": "russian dumplings",
+  "title": "Russian Pelmeni (Dumplings), Rostov-on-Don, Russia.jpg",
+  "creator": "Vyacheslav Argenberg",
+  "license": "CC BY 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Russian_Pelmeni_(Dumplings),_Rostov-on-Don,_Russia.jpg"
+ },
+ "c1p9": {
+  "id": "c61456397",
+  "dish": "Таёжные с олениной",
+  "query": "pelmeni plate",
+  "title": "Пельмени свежесваренные.JPG",
+  "creator": "Lemon Tree The original uploader was Lemon Tree at Russian Wikipedia.",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%9F%D0%B5%D0%BB%D1%8C%D0%BC%D0%B5%D0%BD%D0%B8_%D1%81%D0%B2%D0%B5%D0%B6%D0%B5%D1%81%D0%B2%D0%B0%D1%80%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5.JPG"
+ },
+ "c1p10": {
+  "id": "c81743145",
+  "dish": "Таёжные запечённые с сыром и грибами",
+  "query": "dumplings baked",
+  "title": "Baked apple dumplings in a pan (cropped).jpg",
+  "creator": "Valereee",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Baked_apple_dumplings_in_a_pan_(cropped).jpg"
+ },
+ "c1p11": {
+  "id": "c104320133",
+  "dish": "С бараниной",
+  "query": "lamb dumplings",
+  "title": "Curry potato lamb dumplings and Pok Choy Pork Dumplings noodle soup in Tsuen Wan.jpg",
+  "creator": "Peachyeung316",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Curry_potato_lamb_dumplings_and_Pok_Choy_Pork_Dumplings_noodle_soup_in_Tsuen_Wan.jpg"
+ },
+ "c1p12": {
+  "id": "c81850286",
+  "dish": "С говядиной и зеленью",
+  "query": "boiled dumplings",
+  "title": "Jahodové a broskvové knedlíky z bramborovo tvarohového těsta.jpg",
+  "creator": "Pohled 111",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Jahodov%C3%A9_a_broskvov%C3%A9_knedl%C3%ADky_z_bramborovo_tvarohov%C3%A9ho_t%C4%9Bsta.jpg"
+ },
+ "c1p13": {
+  "id": "c93624596",
+  "dish": "С сёмгой и судаком",
+  "query": "fish dumplings",
+  "title": "Noodles soup with fish eggs and fish dumplings with octopus ball.jpg",
+  "creator": "Peachyeung316",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Noodles_soup_with_fish_eggs_and_fish_dumplings_with_octopus_ball.jpg"
+ },
+ "c1p14": {
+  "id": "c21473522",
+  "dish": "Равиоли с курочкой, сыром и шпинатом",
+  "query": "ravioli spinach",
+  "title": "Spinach Artichoke Ravioli.jpg",
+  "creator": "Michael Rivera",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Spinach_Artichoke_Ravioli.jpg"
+ },
+ "c1p15": {
+  "id": "c81026850",
+  "dish": "Пельмени по-китайски с соусом",
+  "query": "gyoza",
+  "title": "Gyoza no Antei - 3.jpg",
+  "creator": "Enming Yan / 闫恩铭",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Gyoza_no_Antei_-_3.jpg"
+ },
+ "c2p1": {
+  "id": "c23704058",
+  "dish": "Вареники с картошкой",
+  "query": "vareniki potato",
+  "title": "Warenyky.jpg",
+  "creator": "Kagor",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Warenyky.jpg"
+ },
+ "c2p2": {
+  "id": "c76375326",
+  "dish": "Вареники с картошкой и грибами",
+  "query": "pierogi mushrooms",
+  "title": "Christmas Eve dinner of Christmas food of Poland - Pierogi.jpg",
+  "creator": "Kgbo",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Christmas_Eve_dinner_of_Christmas_food_of_Poland_-_Pierogi.jpg"
+ },
+ "c2p3": {
+  "id": "c27251225",
+  "dish": "Вареники с картошкой и копчёным беконом",
+  "query": "varenyky",
+  "title": "Singer Café - Pierogi IMG 3425.JPG",
+  "creator": "Deror_avi",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Singer_Caf%C3%A9_-_Pierogi_IMG_3425.JPG"
+ },
+ "c3p1": {
+  "id": "c15600447",
+  "dish": "Борщ с говядиной и сметаной",
+  "query": "borscht",
+  "title": "Borscht with bread.jpg",
+  "creator": "Juerg Vollmer from Zürich, Schweiz",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Borscht_with_bread.jpg"
+ },
+ "c3p2": {
+  "id": "c1903879",
+  "dish": "Солянка мясная сборная",
+  "query": "solyanka",
+  "title": "Soljanka with olives.jpg",
+  "creator": "Roland Geider (Ogre)",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Soljanka_with_olives.jpg"
+ },
+ "c3p3": {
+  "id": "c4405874",
+  "dish": "Суп из белых грибов со сметаной",
+  "query": "mushroom soup",
+  "title": "Cream Mushroom soup 2.jpg",
+  "creator": "Redeemer|Vodesnet",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cream_Mushroom_soup_2.jpg"
+ },
+ "c3p4": {
+  "id": "c141890995",
+  "dish": "Гороховый с копчёностями и гренками",
+  "query": "pea soup",
+  "title": "Andersens Pea Soup.jpg",
+  "creator": "Eric Polk",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Andersens_Pea_Soup.jpg"
+ },
+ "c3p5": {
+  "id": "c49842177",
+  "dish": "Суп-крем сырный с гренками",
+  "query": "cheese soup",
+  "title": "Broccoli cheese soup 1.jpg",
+  "creator": "John Ong from Chicago, U.S.A.",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Broccoli_cheese_soup_1.jpg"
+ },
+ "c3p6": {
+  "id": "c107603578",
+  "dish": "Окрошка с колбасой",
+  "query": "cold soup",
+  "title": "Asparagus soup (spargelsuppe).jpg",
+  "creator": "Petar Milošević",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Asparagus_soup_(spargelsuppe).jpg"
+ },
+ "c3p7": {
+  "id": "c70998071",
+  "dish": "Бульон с яйцом и гренками",
+  "query": "chicken broth egg",
+  "title": "Einlaufsuppe im Teller-0372.jpg",
+  "creator": "Raimond Spekking",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Einlaufsuppe_im_Teller-0372.jpg"
+ },
+ "c4p7": {
+  "id": "c92466513",
+  "dish": "Гречка с грибами и луком",
+  "query": "buckwheat mushrooms",
+  "title": "Hourai Soba - Soba with a set of 8 small toppings shiitake mushrooms, shredded thin omelet, sesame seeds, shrimp tempura, wasabi, nori, Japanese leeks and grated daikon (13680927873).jpg",
+  "creator": "City Foodsters",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Hourai_Soba_-_Soba_with_a_set_of_8_small_toppings_shiitake_mushrooms,_shredded_thin_omelet,_sesame_seeds,_shrimp_tempura,_wasabi,_nori,_Japanese_leeks_and_grated_daikon_(13680927873).jpg"
+ },
+ "c5p1": {
+  "id": "c3294513",
+  "dish": "Оливье с колбасой",
+  "query": "olivier salad",
+  "title": "Russian Olivier salad.jpg",
+  "creator": "AlMare",
+  "license": "CC BY 2.5",
+  "page": "https://commons.wikimedia.org/wiki/File:Russian_Olivier_salad.jpg"
+ },
+ "c5p2": {
+  "id": "c1513299",
+  "dish": "Селёдка под шубой",
+  "query": "dressed herring",
+  "title": "Selidi pod shuboi.jpg",
+  "creator": "User:Zserghei",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Selidi_pod_shuboi.jpg"
+ },
+ "c5p3": {
+  "id": "c201728186",
+  "dish": "Цезарь с курицей",
+  "query": "caesar salad",
+  "title": "Caesar Salad - Nando's 2026-10-11.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Caesar_Salad_-_Nando%27s_2026-10-11.jpg"
+ },
+ "c5p4": {
+  "id": "c93289723",
+  "dish": "По-гречески",
+  "query": "greek salad",
+  "title": "Greek salad and Tzatziki.jpg",
+  "creator": "Paasikivi",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Greek_salad_and_Tzatziki.jpg"
+ },
+ "c5p5": {
+  "id": "c144344216",
+  "dish": "Гнездо глухаря",
+  "query": "potato salad",
+  "title": "Warm potato salad with ham.jpg",
+  "creator": "jules",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Warm_potato_salad_with_ham.jpg"
+ },
+ "c5p6": {
+  "id": "c83303121",
+  "dish": "Петроградский",
+  "query": "beef salad",
+  "title": "Salată de boeuf3.png",
+  "creator": "Sacha47",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Salat%C4%83_de_boeuf3.png"
+ },
+ "c5p7": {
+  "id": "c117776857",
+  "dish": "Летний",
+  "query": "vegetable salad",
+  "title": "Candied farmers’ vegetable salad, Chateau Lake Louise.jpg",
+  "creator": "Sharon Hahn Darlin",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Candied_farmers%E2%80%99_vegetable_salad,_Chateau_Lake_Louise.jpg"
+ },
+ "c6p1": {
+  "id": "c129269804",
+  "dish": "Селёдка с картошкой",
+  "query": "herring potatoes",
+  "title": "Herring with mustard and black pepper, potatoes with butter, and tomatoes - Massachusetts.jpg",
+  "creator": "Daderot",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Herring_with_mustard_and_black_pepper,_potatoes_with_butter,_and_tomatoes_-_Massachusetts.jpg"
+ },
+ "c6p2": {
+  "id": "c82590280",
+  "dish": "Язык с хреном",
+  "query": "sliced tongue",
+  "title": "Beef tongue with sliced with wine soup pasta.jpg",
+  "creator": "Geoffreyrabbit",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Beef_tongue_with_sliced_with_wine_soup_pasta.jpg"
+ },
+ "c6p3": {
+  "id": "c137593811",
+  "dish": "Мясная тарелка",
+  "query": "cold cuts platter",
+  "title": "A Cold cut and meats ball platter from ODELICE Tsuen Wan West.jpg",
+  "creator": "Peachyeung316",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_Cold_cut_and_meats_ball_platter_from_ODELICE_Tsuen_Wan_West.jpg"
+ },
+ "c6p4": {
+  "id": "c4398832",
+  "dish": "Сало по-домашнему",
+  "query": "lard sliced bread",
+  "title": "Bread slice with lard.jpg",
+  "creator": "JanKokular",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Bread_slice_with_lard.jpg"
+ },
+ "c6p5": {
+  "id": "c202977066",
+  "dish": "Креветки в темпуре",
+  "query": "shrimp tempura",
+  "title": "Tempura shrimp and vegetables - Massachusetts.jpg",
+  "creator": "Daderot",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Tempura_shrimp_and_vegetables_-_Massachusetts.jpg"
+ },
+ "c6p6": {
+  "id": "c126858095",
+  "dish": "Чесночные гренки",
+  "query": "garlic croutons",
+  "title": "Salad with smoked oysters, croutons, and cheddar cheese, with garlic vinaigrette - Massachusetts.jpg",
+  "creator": "Daderot",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Salad_with_smoked_oysters,_croutons,_and_cheddar_cheese,_with_garlic_vinaigrette_-_Massachusetts.jpg"
+ },
+ "c6p7": {
+  "id": "c185745892",
+  "dish": "Сырные шарики",
+  "query": "cheese balls",
+  "title": "No Name cheese flavour twists, Canada, detail 02.jpg",
+  "creator": "Chris Woodrich",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:No_Name_cheese_flavour_twists,_Canada,_detail_02.jpg"
+ },
+ "c6p8": {
+  "id": "c150061444",
+  "dish": "Луковые кольца",
+  "query": "onion rings",
+  "title": "Onion rings served in Fort William.jpg",
+  "creator": "Grendelkhan",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Onion_rings_served_in_Fort_William.jpg"
+ },
+ "c7p1": {
+  "id": "c4534416",
+  "dish": "Блинчик с варёной сгущёнкой и орешками",
+  "query": "blini",
+  "title": "Blini Tanya.jpg",
+  "creator": "The original uploader was Hugo.arg at Lithuanian Wikipedia.",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:Blini_Tanya.jpg"
+ },
+ "c7p2": {
+  "id": "c80212090",
+  "dish": "Блинчик с ветчиной и сыром",
+  "query": "crepe ham cheese",
+  "title": "Ham and cheese crepe (3275485711).jpg",
+  "creator": "Geoff Peters from Vancouver, BC, Canada",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ham_and_cheese_crepe_(3275485711).jpg"
+ },
+ "c7p3": {
+  "id": "c169028429",
+  "dish": "Шарлотка с яблоками",
+  "query": "apple charlotte",
+  "title": "Apple & Apricot Charlotte - Sugardough 2025-07-01.jpg",
+  "creator": "Andy Li",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Apple_%26_Apricot_Charlotte_-_Sugardough_2025-07-01.jpg"
+ },
+ "c7p4": {
+  "id": "c37232256",
+  "dish": "Штрудель с мороженым",
+  "query": "apple strudel",
+  "title": "Wiener Apfelstrudel.jpg",
+  "creator": "Burkhard Mücke",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Wiener_Apfelstrudel.jpg"
+ },
+ "c7p5": {
+  "id": "c90142291",
+  "dish": "Мороженое с мёдом и орешками",
+  "query": "dessert",
+  "title": "Ohana Bread Pudding - 2.jpg",
+  "creator": "Edward Russell",
+  "license": "CC BY 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Ohana_Bread_Pudding_-_2.jpg"
+ },
+ "c8p1": {
+  "id": "c16240840",
+  "dish": "Морс клюквенный",
+  "query": "mors drink",
+  "title": "Mors (ru. Морс - прохладительный негазированный напиток).JPG",
+  "creator": "Schekinov Alexey Victorovich",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Mors_(ru._%D0%9C%D0%BE%D1%80%D1%81_-_%D0%BF%D1%80%D0%BE%D1%85%D0%BB%D0%B0%D0%B4%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B5%D0%B3%D0%B0%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D0%BD%D0%B0%D0%BF%D0%B8%D1%82%D0%BE%D0%BA).JPG"
+ },
+ "c8p2": {
+  "id": "c152580891",
+  "dish": "Компот из сухофруктов",
+  "query": "fruit compote",
+  "title": "Compote de prunes maison - variété Sainte-Catherine - 2024-09-12 - 01.jpg",
+  "creator": "Jmh2o",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Compote_de_prunes_maison_-_vari%C3%A9t%C3%A9_Sainte-Catherine_-_2024-09-12_-_01.jpg"
+ },
+ "c8p3": {
+  "id": "c122292863",
+  "dish": "Облепиховый «не чай",
+  "query": "cup of tea",
+  "title": "A cup of black tea with biscuits.jpg",
+  "creator": "Nayan j Nath",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:A_cup_of_black_tea_with_biscuits.jpg"
+ },
+ "c8p4": {
+  "id": "c18009303",
+  "dish": "Сбитень медовый",
+  "query": "sbiten",
+  "title": "Сбитень (збитень) ржаной.JPG",
+  "creator": "Schekinov Alexey Victorovich",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:%D0%A1%D0%B1%D0%B8%D1%82%D0%B5%D0%BD%D1%8C_(%D0%B7%D0%B1%D0%B8%D1%82%D0%B5%D0%BD%D1%8C)_%D1%80%D0%B6%D0%B0%D0%BD%D0%BE%D0%B9.JPG"
+ },
+ "c8p5": {
+  "id": "c134948381",
+  "dish": "Капучино",
+  "query": "cappuccino",
+  "title": "Cappuccino and cookie.jpg",
+  "creator": "TricksterWildcat",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cappuccino_and_cookie.jpg"
+ },
+ "c8p6": {
+  "id": "c79453705",
+  "dish": "Сок",
+  "query": "fruit juice glass",
+  "title": "Pineapple Juice fruits-465832.jpg",
+  "creator": "public domain",
+  "license": "CC0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pineapple_Juice_fruits-465832.jpg"
+ },
+ "c2p4": {
+  "id": "c17910612",
+  "dish": "Вареники с квашеной капустой",
+  "query": "vareniki",
+  "title": "Pierogi, Gniezno, Polonia3.jpg",
+  "creator": "Diego Delso",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Pierogi,_Gniezno,_Polonia3.jpg"
+ },
+ "c2p6": {
+  "id": "c7408752",
+  "dish": "Вареники с вишней",
+  "query": "vareniki cherries",
+  "title": "Cherry Vareniki.JPG",
+  "creator": "Rudolf Simon",
+  "license": "CC BY-SA 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Cherry_Vareniki.JPG"
+ },
+ "c2p7": {
+  "id": "c90449555",
+  "dish": "Вареники с сулугуни и укропом",
+  "query": "pierogi",
+  "title": "Polish pierogi in a dish.jpg",
+  "creator": "Piotrus",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Polish_pierogi_in_a_dish.jpg"
+ },
+ "c2p8": {
+  "id": "c113127569",
+  "dish": "Манты домашние",
+  "query": "manti dumplings",
+  "title": "Manti 1.jpg",
+  "creator": "Scudsvlad",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Manti_1.jpg"
+ },
+ "c2p9": {
+  "id": "c67369086",
+  "dish": "Манты с бараниной",
+  "query": "manti food",
+  "title": "Manti - oval plate.jpg",
+  "creator": "E4024",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Manti_-_oval_plate.jpg"
+ },
+ "c4p1": {
+  "id": "c123603815",
+  "dish": "Котлета Пожарская куриная",
+  "query": "pozharsky cutlet",
+  "title": "Torzhok Pozharsky cutlets 016 0494.jpg",
+  "creator": "Ludvig14",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Torzhok_Pozharsky_cutlets_016_0494.jpg"
+ },
+ "c4p2": {
+  "id": "c11421851",
+  "dish": "Котлета домашняя",
+  "query": "kotlety cutlets",
+  "title": "Kotlety ziemniaczane.jpg",
+  "creator": "Magalia",
+  "license": "CC BY 3.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Kotlety_ziemniaczane.jpg"
+ },
+ "c4p3": {
+  "id": "c141566844",
+  "dish": "Говядина томлёная с овощами",
+  "query": "beef stew",
+  "title": "Beef stew 2.jpg",
+  "creator": "3steph14",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Beef_stew_2.jpg"
+ },
+ "c4p4": {
+  "id": "c66322487",
+  "dish": "Филе судака",
+  "query": "fried fish fillet",
+  "title": "Fried Fish Fillet with Mayonnaise.jpg",
+  "creator": "Ceeseven",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Fried_Fish_Fillet_with_Mayonnaise.jpg"
+ },
+ "c4p5": {
+  "id": "c60934853",
+  "dish": "Долма в виноградных листьях",
+  "query": "dolma",
+  "title": "Vorspeise mit Dolma und Tzatziki.jpg",
+  "creator": "Kritzolina",
+  "license": "CC BY-SA 4.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Vorspeise_mit_Dolma_und_Tzatziki.jpg"
+ },
+ "c4p6": {
+  "id": "c1635424",
+  "dish": "Картофельное пюре",
+  "query": "mashed potatoes",
+  "title": "MashedPotatoes.jpg",
+  "creator": "Renee Comet (photographer)",
+  "license": "Public domain",
+  "page": "https://commons.wikimedia.org/wiki/File:MashedPotatoes.jpg"
+ },
+ "c2p5": {
+  "id": "c4097528",
+  "dish": "Вареники с творогом",
+  "query": "varenyky sour cream",
+  "title": "Plates of pierogi with sour cream and onion.jpg",
+  "creator": "stu_spivack",
+  "license": "CC BY-SA 2.0",
+  "page": "https://commons.wikimedia.org/wiki/File:Plates_of_pierogi_with_sour_cream_and_onion.jpg"
+ }
+}
